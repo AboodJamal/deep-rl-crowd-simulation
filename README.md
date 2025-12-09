@@ -26,14 +26,22 @@ deep-rl-crowd-simulation/
 │   ├── ultimate_curriculum_trainer.py
 │   ├── ultimate_domain_randomization_env.py
 │   ├── advanced_policy_network.py
-│   └── ultimate_evaluation.py
+│   ├── ultimate_evaluation.py
+│   ├── numpy_compat_fix.py
+│   └── README.md
 ├── models/                         # Trained model checkpoints
-│   └── ultimate_generalized_agent.zip
+│   ├── ultimate_generalized_agent.zip
+│   ├── ultimate_generalized_agent_vecnormalize.pkl
+│   └── README.md
 ├── evaluation/                     # Evaluation results
-│   └── eval_2m/                   # 90% success rate evaluation
+│   ├── results/
+│   │   └── eval_2m/               # 90% success rate evaluation
+│   └── README.md
 ├── docs/                          # Documentation
 │   ├── PROJECT_OVERVIEW.md
 │   └── archive/                   # Historical analysis documents
+├── curriculum_logs/               # Training logs
+│   └── ultimate_training_summary.json
 ├── requirements.txt               # Python dependencies
 └── README.md                      # This file
 ```
@@ -120,10 +128,10 @@ python core/ultimate_curriculum_trainer.py --timesteps 3900000
 
 ## 🏗️ Repository Branches
 
-- **`main`**: Latest stable version with all features
+- **`master`**: Main stable branch with DRL baseline
+- **`drl-baseline`**: Clean DRL implementation (current branch - recommended)
 - **`archive/full-project`**: Complete historical state (all eval runs, old files)
-- **`drl-baseline`**: Clean DRL implementation (pre-VGA, recommended starting point)
-- **`feature/vga-integration`**: Branch for VGA (Variable Goal Approach) integration
+- **`feature/vga-integration`**: Branch for VGA (Variable Goal Approach) integration (upcoming)
 
 ---
 
@@ -137,8 +145,10 @@ python core/ultimate_curriculum_trainer.py --timesteps 3900000
 ## 🔬 Future Work
 
 - [ ] Multi-agent simulation
-- [ ] Validation against real experimental data (VGA, Jülich Bottleneck)
+- [ ] Validation against real experimental data (Jülich Bottleneck)
 - [ ] Comparison with classical models (JuPedSim, Social Force Model)
+- [ ] Improved comfort-aware path planning
+- [ ] Stochastic policy for path diversity
 - [ ] Variable Goal Approach (VGA) integration
 
 ---
