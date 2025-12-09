@@ -1,0 +1,280 @@
+{
+  "total_timesteps": 3900000,
+  "stages": [
+    {
+      "stage": "Super Easy Standard",
+      "config": {
+        "difficulty": "super_easy",
+        "shapes": [
+          "standard"
+        ]
+      },
+      "timesteps": 300000,
+      "duration_seconds": 1919.813427,
+      "success_rate": 27.0,
+      "total_episodes": 666,
+      "env_type_breakdown": {
+        "standard": {
+          "success_rate": 24.174174174174173,
+          "episodes": 666
+        }
+      }
+    },
+    {
+      "stage": "Standard Sparse",
+      "config": {
+        "difficulty": "easy",
+        "shapes": [
+          "standard"
+        ]
+      },
+      "timesteps": 300000,
+      "duration_seconds": 1954.7833,
+      "success_rate": 42.0,
+      "total_episodes": 541,
+      "env_type_breakdown": {
+        "standard": {
+          "success_rate": 65.24953789279112,
+          "episodes": 541
+        }
+      }
+    },
+    {
+      "stage": "Standard Dense Easy",
+      "config": {
+        "difficulty": "easy",
+        "shapes": [
+          "standard"
+        ]
+      },
+      "timesteps": 300000,
+      "duration_seconds": 1840.729862,
+      "success_rate": 14.000000000000002,
+      "total_episodes": 441,
+      "env_type_breakdown": {
+        "standard": {
+          "success_rate": 23.582766439909296,
+          "episodes": 441
+        }
+      }
+    },
+    {
+      "stage": "Standard Medium",
+      "config": {
+        "difficulty": "medium",
+        "shapes": [
+          "standard"
+        ]
+      },
+      "timesteps": 300000,
+      "duration_seconds": 2518.389987,
+      "success_rate": 74.0,
+      "total_episodes": 512,
+      "env_type_breakdown": {
+        "standard": {
+          "success_rate": 67.578125,
+          "episodes": 512
+        }
+      }
+    },
+    {
+      "stage": "Standard Hard",
+      "config": {
+        "difficulty": "hard",
+        "shapes": [
+          "standard"
+        ]
+      },
+      "timesteps": 300000,
+      "duration_seconds": 3945.324468,
+      "success_rate": 97.0,
+      "total_episodes": 538,
+      "env_type_breakdown": {
+        "standard": {
+          "success_rate": 72.4907063197026,
+          "episodes": 538
+        }
+      }
+    },
+    {
+      "stage": "L/T Super Easy",
+      "config": {
+        "difficulty": "super_easy",
+        "shapes": [
+          "lshaped",
+          "tshaped"
+        ]
+      },
+      "timesteps": 300000,
+      "duration_seconds": 1589.478219,
+      "success_rate": 15.0,
+      "total_episodes": 697,
+      "env_type_breakdown": {
+        "lshaped": {
+          "success_rate": 17.964071856287426,
+          "episodes": 334
+        },
+        "tshaped": {
+          "success_rate": 28.37465564738292,
+          "episodes": 363
+        }
+      }
+    },
+    {
+      "stage": "L/T Easy",
+      "config": {
+        "difficulty": "easy",
+        "shapes": [
+          "lshaped",
+          "tshaped"
+        ]
+      },
+      "timesteps": 300000,
+      "duration_seconds": 2421.30413,
+      "success_rate": 21.0,
+      "total_episodes": 441,
+      "env_type_breakdown": {
+        "lshaped": {
+          "success_rate": 13.452914798206278,
+          "episodes": 223
+        },
+        "tshaped": {
+          "success_rate": 28.440366972477065,
+          "episodes": 218
+        }
+      }
+    },
+    {
+      "stage": "L/T Medium",
+      "config": {
+        "difficulty": "medium",
+        "shapes": [
+          "lshaped",
+          "tshaped"
+        ]
+      },
+      "timesteps": 300000,
+      "duration_seconds": 2618.8101,
+      "success_rate": 11.0,
+      "total_episodes": 323,
+      "env_type_breakdown": {
+        "tshaped": {
+          "success_rate": 21.686746987951807,
+          "episodes": 166
+        },
+        "lshaped": {
+          "success_rate": 14.012738853503185,
+          "episodes": 157
+        }
+      }
+    },
+    {
+      "stage": "L/T Hard",
+      "config": {
+        "difficulty": "hard",
+        "shapes": [
+          "lshaped",
+          "tshaped"
+        ]
+      },
+      "timesteps": 300000,
+      "duration_seconds": 2964.624853,
+      "success_rate": 16.0,
+      "total_episodes": 288,
+      "env_type_breakdown": {
+        "lshaped": {
+          "success_rate": 10.56338028169014,
+          "episodes": 142
+        },
+        "tshaped": {
+          "success_rate": 24.65753424657534,
+          "episodes": 146
+        }
+      }
+    },
+    {
+      "stage": "All Mixed (Std+L/T)",
+      "config": {
+        "difficulty": "mixed",
+        "shapes": [
+          "standard",
+          "lshaped",
+          "tshaped"
+        ]
+      },
+      "timesteps": 600000,
+      "duration_seconds": 6106.588996,
+      "success_rate": 20.0,
+      "total_episodes": 623,
+      "env_type_breakdown": {
+        "lshaped": {
+          "success_rate": 19.387755102040817,
+          "episodes": 196
+        },
+        "tshaped": {
+          "success_rate": 21.875,
+          "episodes": 224
+        },
+        "standard": {
+          "success_rate": 17.24137931034483,
+          "episodes": 203
+        }
+      }
+    },
+    {
+      "stage": "Pattern Navigation",
+      "config": {
+        "difficulty": "medium",
+        "shapes": [
+          "standard"
+        ],
+        "patterns": [
+          "narrow",
+          "zigzag",
+          "clustered"
+        ]
+      },
+      "timesteps": 300000,
+      "duration_seconds": 2374.285475,
+      "success_rate": 41.0,
+      "total_episodes": 396,
+      "env_type_breakdown": {
+        "standard": {
+          "success_rate": 47.474747474747474,
+          "episodes": 396
+        }
+      }
+    },
+    {
+      "stage": "Ultra Challenge",
+      "config": {
+        "difficulty": "ultra",
+        "shapes": [
+          "standard",
+          "lshaped",
+          "tshaped"
+        ]
+      },
+      "timesteps": 300000,
+      "duration_seconds": 3943.662145,
+      "success_rate": 57.99999999999999,
+      "total_episodes": 432,
+      "env_type_breakdown": {
+        "tshaped": {
+          "success_rate": 59.863945578231295,
+          "episodes": 147
+        },
+        "lshaped": {
+          "success_rate": 63.70370370370371,
+          "episodes": 135
+        },
+        "standard": {
+          "success_rate": 49.333333333333336,
+          "episodes": 150
+        }
+      }
+    }
+  ],
+  "final_model": "models/ultimate_generalized_agent.zip",
+  "timestamp": "2025-11-19T05:07:04.270590"
+}

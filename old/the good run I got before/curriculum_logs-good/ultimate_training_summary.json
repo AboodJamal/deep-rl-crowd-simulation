@@ -1,0 +1,165 @@
+{
+  "total_timesteps": 1450000,
+  "stages": [
+    {
+      "stage": "Standard Sparse",
+      "config": {
+        "difficulty": "easy",
+        "shapes": [
+          "standard"
+        ]
+      },
+      "timesteps": 150000,
+      "duration_seconds": 1395.706047,
+      "success_rate": 22.0,
+      "total_episodes": 213,
+      "env_type_breakdown": {
+        "standard": {
+          "success_rate": 14.553990610328638,
+          "episodes": 213
+        }
+      }
+    },
+    {
+      "stage": "Standard Dense",
+      "config": {
+        "difficulty": "medium",
+        "shapes": [
+          "standard"
+        ]
+      },
+      "timesteps": 200000,
+      "duration_seconds": 3289.567879,
+      "success_rate": 23.0,
+      "total_episodes": 303,
+      "env_type_breakdown": {
+        "standard": {
+          "success_rate": 14.85148514851485,
+          "episodes": 303
+        }
+      }
+    },
+    {
+      "stage": "Standard Hard",
+      "config": {
+        "difficulty": "hard",
+        "shapes": [
+          "standard"
+        ]
+      },
+      "timesteps": 150000,
+      "duration_seconds": 6847.956284,
+      "success_rate": 45.0,
+      "total_episodes": 276,
+      "env_type_breakdown": {
+        "standard": {
+          "success_rate": 42.7536231884058,
+          "episodes": 276
+        }
+      }
+    },
+    {
+      "stage": "L/T Easy",
+      "config": {
+        "difficulty": "easy",
+        "shapes": [
+          "lshaped",
+          "tshaped"
+        ]
+      },
+      "timesteps": 200000,
+      "duration_seconds": 6425.428964,
+      "success_rate": 88.0,
+      "total_episodes": 418,
+      "env_type_breakdown": {
+        "lshaped": {
+          "success_rate": 71.10091743119266,
+          "episodes": 218
+        },
+        "tshaped": {
+          "success_rate": 74.5,
+          "episodes": 200
+        }
+      }
+    },
+    {
+      "stage": "L/T Medium",
+      "config": {
+        "difficulty": "medium",
+        "shapes": [
+          "lshaped",
+          "tshaped"
+        ]
+      },
+      "timesteps": 250000,
+      "duration_seconds": 8531.222119,
+      "success_rate": 74.0,
+      "total_episodes": 602,
+      "env_type_breakdown": {
+        "tshaped": {
+          "success_rate": 65.24590163934427,
+          "episodes": 305
+        },
+        "lshaped": {
+          "success_rate": 59.93265993265994,
+          "episodes": 297
+        }
+      }
+    },
+    {
+      "stage": "L/T Hard",
+      "config": {
+        "difficulty": "hard",
+        "shapes": [
+          "lshaped",
+          "tshaped"
+        ]
+      },
+      "timesteps": 200000,
+      "duration_seconds": 42245.941067,
+      "success_rate": 67.0,
+      "total_episodes": 594,
+      "env_type_breakdown": {
+        "tshaped": {
+          "success_rate": 63.44827586206897,
+          "episodes": 290
+        },
+        "lshaped": {
+          "success_rate": 61.18421052631579,
+          "episodes": 304
+        }
+      }
+    },
+    {
+      "stage": "All Mixed (Std+L/T)",
+      "config": {
+        "difficulty": "mixed",
+        "shapes": [
+          "standard",
+          "lshaped",
+          "tshaped"
+        ]
+      },
+      "timesteps": 300000,
+      "duration_seconds": 5022.842495,
+      "success_rate": 68.0,
+      "total_episodes": 754,
+      "env_type_breakdown": {
+        "lshaped": {
+          "success_rate": 72.8,
+          "episodes": 250
+        },
+        "tshaped": {
+          "success_rate": 68.16326530612244,
+          "episodes": 245
+        },
+        "standard": {
+          "success_rate": 43.62934362934363,
+          "episodes": 259
+        }
+      }
+    }
+  ],
+  "final_model": "models/ultimate_generalized_agent.zip",
+  "timestamp": "2025-11-05T21:48:50.095970"
+}
