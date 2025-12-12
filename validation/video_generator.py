@@ -396,10 +396,8 @@ def generate_videos_from_experiment_results(
         start_pos = np.array(definition['start_pos'])
         goal_pos = np.array(definition['goal_pos'])
         
-        # Reconstruct obstacles (stored inline in results)
-        obstacles = []
-        # We'll extract from first trial's positions context if needed
-        # For now, use empty list (can be enhanced)
+        # Get obstacles from definition
+        obstacles = definition.get('obstacles', [])
         
         # Generate deterministic video
         if 'vga_upl_deterministic' in scenario_data['models']:

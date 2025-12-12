@@ -365,7 +365,8 @@ class ExperimentRunner:
                 'type': scenario.scenario_type,
                 'start_pos': scenario.start_pos.tolist(),
                 'goal_pos': scenario.goal_pos.tolist(),
-                'num_obstacles': len(scenario.obstacles)
+                'num_obstacles': len(scenario.obstacles),
+                'obstacles': scenario.obstacles  # Store obstacles for video generation
             },
             'models': {}
         }
