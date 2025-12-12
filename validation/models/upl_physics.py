@@ -43,23 +43,26 @@ from dataclasses import dataclass
 class UPLParameters:
     """
     Parameters for the Universal Power Law physics model.
-    Values are based on the VGA paper and pedestrian dynamics literature.
+    Values based on:
+    - Helbing & Molnár (1995): Social Force Model
+    - Chraibi et al. (2010): Generalized Centrifugal Force Model
+    - Standard pedestrian dynamics literature
     """
-    # Interaction force parameters
-    A: float = 2000.0  # Strength of repulsion (N)
-    B: float = 0.08    # Range of repulsion (m)
-    r: float = 0.3     # Interaction radius (m) - pedestrian body radius
+    # Interaction force parameters (from Helbing's Social Force Model)
+    A: float = 2000.0     # Strength of repulsion (N) - Helbing: 2000-3000N
+    B: float = 0.08       # Range of repulsion (m) - Helbing: 0.08m
+    r: float = 0.2        # Agent radius (m) - typical: 0.2-0.3m
     
     # Self-propulsion parameters
-    v_desired: float = 1.34  # Desired walking speed (m/s) - typical human
-    tau: float = 0.5         # Relaxation time (s)
+    v_desired: float = 1.34  # Desired walking speed (m/s) - Weidmann: 1.34 m/s
+    tau: float = 0.5         # Relaxation time (s) - Helbing: 0.5s
     
     # Physical parameters
-    mass: float = 80.0       # Agent mass (kg)
-    max_speed: float = 2.0   # Maximum speed limit (m/s)
+    mass: float = 80.0       # Agent mass (kg) - average adult
+    max_speed: float = 2.5   # Maximum speed limit (m/s) - human sprint ~3m/s, comfortable max ~2.5m/s
     
     # Simulation parameters
-    dt: float = 0.1          # Time step (s) - increased for faster convergence
+    dt: float = 0.05         # Time step (s) - smaller for accuracy (Helbing uses 0.01-0.05)
     safety_margin: float = 0.1  # Extra clearance from obstacles (m)
 
 
@@ -115,13 +118,15 @@ class UPLPhysics:
         d_eff = distance - obstacle_radius - self.params.r
         
         # If already beyond interaction range, no force
-        if d_eff > 3.0:  # Interaction cutoff distance (extended range)
+        # Helbing: interaction typically within 2-3 radii
+        if d_eff > 2.0:  # Interaction cutoff distance
             return np.zeros(2)
         
-        # Power law repulsion (stronger when close)
+        # Exponential repulsion (Helbing's Social Force Model)
+        # F = A * exp((r - d) / B)
         exponent = (self.params.r - d_eff) / self.params.B
-        # Clip exponent to prevent overflow
-        exponent = np.clip(exponent, -20, 10)  # Allow stronger repulsion
+        # Clip exponent to prevent overflow (exp(20) ≈ 500 million)
+        exponent = np.clip(exponent, -20, 15)
         magnitude = self.params.A * np.exp(exponent)
         
         return magnitude * n_ij
