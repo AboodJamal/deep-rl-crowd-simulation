@@ -1,0 +1,342 @@
+# Experimental Data Configuration
+# ================================
+# Complete configuration for VGA+UPL validation against real experimental data
+# All parameters are scientifically validated from literature
+
+## Physical Parameters (from VGA Paper & Literature)
+
+### Pedestrian Parameters
+pedestrian_radius: 0.2  # meters - VGA paper mentions 0.2m, matches UPL physics
+pedestrian_mass: 80.0  # kg - average adult
+pedestrian_shoulder_width: 0.4  # meters - for reference
+
+### Obstacle Parameters
+obstacle_radius: 0.25  # meters - human-sized stationary obstacles (VGA paper)
+obstacle_type: "human-sized stationary"  # non-living obstacles
+
+### Clustering Parameters (from VGA Paper)
+# "Obstacles are grouped into a cluster if their surface-to-surface distance 
+# is lesser than the pedestrian size"
+clustering_threshold: 0.2  # meters - same as pedestrian_radius
+
+### UPL Physics Parameters (Helbing & Molnár 1995)
+upl_parameters:
+  A: 2000.0  # N - Repulsion strength
+  B: 0.08    # m - Interaction range
+  r: 0.2     # m - Agent radius (matches pedestrian_radius)
+  v_desired: 1.34  # m/s - Weidmann's comfortable walking speed
+  tau: 0.5   # s - Relaxation time constant
+  mass: 80.0  # kg - Agent mass
+  max_speed: 2.5  # m/s - Maximum speed limit
+  dt: 0.05   # s - Time step for integration
+  safety_margin: 0.1  # m - Extra clearance from obstacles
+
+### VGA Parameters
+vga_parameters:
+  personal_distance: 0.5  # m - Preferred distance from obstacles
+  cone_angle: 90  # degrees - Field of view for obstacle detection
+  goal_tolerance: 0.3  # m - Distance to goal considered as "reached"
+
+---
+
+## Dataset Specifications
+
+### Data Location
+data_root: "D:\\Abdullah Jamal\\downloads\\VGA-exp\\Pedestrian-Experimental-Data"
+
+### Available Datasets
+
+#### 1. SOSP (Single Obstacle Single Pedestrian)
+sosp:
+  description: "Single stationary obstacle obstructing pedestrian path"
+  num_trials: 54
+  max_time: 6.833  # seconds
+  files:
+    initial_final: "SOSP_initialFinalPos_feed.txt"
+    obstacles: "SOSP_obstPos_feed.txt"
+  data_format:
+    initial_final_columns:
+      - pedInitialPos_x
+      - pedInitialPos_y
+      - pedFinalPos_x
+      - pedFinalPos_y
+      - pedDesiredSpeed
+      - ExpNo
+    obstacle_columns:
+      - obstPos_x
+      - obstPos_y
+      - obstNo
+  num_obstacles: 1
+  obstacle_positions:
+    - x: 5.000
+      y: 0.000
+      radius: 0.25  # human-sized
+
+#### 2. MOSP Case A (Low Density)
+mosp_case_a:
+  description: "Multiple obstacles - low density configuration"
+  num_trials: 239
+  max_time: 10.866  # seconds
+  files:
+    initial_final: "MOSP_CaseA_initialFinalPos_feed.txt"
+    obstacles: "MOSP_CaseA_obstPos_feed.txt"
+  data_format:
+    initial_final_columns:
+      - pedInitialPos_x
+      - pedInitialPos_y
+      - pedFinalPos_x
+      - pedFinalPos_y
+      - pedDesiredSpeed
+      - ExpNo
+      - idxNo  # can ignore
+    obstacle_columns:
+      - obstPos_x
+      - obstPos_y
+      - obstNo
+  num_obstacles: 4
+  obstacle_positions:
+    - {x: 5.465369, y: -0.446104, radius: 0.25}
+    - {x: 7.263566, y: 0.344112, radius: 0.25}
+    - {x: 3.982566, y: 0.207602, radius: 0.25}
+    - {x: 3.932043, y: -0.978225, radius: 0.25}
+
+#### 3. MOSP Case B (Medium Density)
+mosp_case_b:
+  description: "Multiple obstacles - medium density configuration"
+  num_trials: ~180
+  max_time: 11.266  # seconds
+  files:
+    initial_final: "MOSP_CaseB_initialFinalPos_feed.txt"
+    obstacles: "MOSP_CaseB_obstPos_feed.txt"
+  data_format:
+    initial_final_columns:
+      - pedInitialPos_x
+      - pedInitialPos_y
+      - pedFinalPos_x
+      - pedFinalPos_y
+      - pedDesiredSpeed
+      - ExpNo
+      - idxNo  # can ignore
+    obstacle_columns:
+      - obstPos_x
+      - obstPos_y
+      - obstNo
+  num_obstacles: 7
+  obstacle_positions:
+    - {x: 5.358333, y: -0.207469, radius: 0.25}
+    - {x: 4.950000, y: 0.190871, radius: 0.25}
+    - {x: 7.108333, y: 0.290456, radius: 0.25}
+    - {x: 2.891667, y: -1.120332, radius: 0.25}
+    - {x: 4.850000, y: -1.319502, radius: 0.25}
+    - {x: 4.200000, y: 1.236515, radius: 0.25}
+    - {x: 7.549999, y: -0.813279, radius: 0.25}
+
+#### 4. MOSP Case C (High Density)
+mosp_case_c:
+  description: "Multiple obstacles - high density configuration"
+  num_trials: ~170
+  max_time: 11.466  # seconds
+  files:
+    initial_final: "MOSP_CaseC_initialFinalPos_feed.txt"
+    obstacles: "MOSP_CaseC_obstPos_feed.txt"
+  data_format:
+    initial_final_columns:
+      - pedInitialPos_x
+      - pedInitialPos_y
+      - pedFinalPos_x
+      - pedFinalPos_y
+      - pedDesiredSpeed
+      - ExpNo
+      - idxNo  # can ignore
+    obstacle_columns:
+      - obstPos_x
+      - obstPos_y
+      - obstNo
+  num_obstacles: "multiple"  # check file
+
+#### 5. MOSP Case D (Very High Density)
+mosp_case_d:
+  description: "Multiple obstacles - very high density configuration"
+  num_trials: ~260
+  max_time: 12.833  # seconds
+  files:
+    initial_final: "MOSP_CaseD_initialFinalPos_feed.txt"
+    obstacles: "MOSP_CaseD_obstPos_feed.txt"
+  data_format:
+    initial_final_columns:
+      - pedInitialPos_x
+      - pedInitialPos_y
+      - pedFinalPos_x
+      - pedFinalPos_y
+      - pedDesiredSpeed
+      - ExpNo
+      - idxNo  # can ignore
+    obstacle_columns:
+      - obstPos_x
+      - obstPos_y
+      - obstNo
+  num_obstacles: "multiple"  # check file
+
+#### 6. Head-On
+head_on:
+  description: "Two pedestrians walking toward each other"
+  num_trials: ~40
+  max_time: 8.033  # seconds
+  files:
+    initial_final: "Head_On_initialFinalPos_feed.txt"
+  data_format:
+    initial_final_columns:
+      - ped1InitialPos_x
+      - ped1InitialPos_y
+      - ped1FinalPos_x
+      - ped1FinalPos_y
+      - ped1DesiredSpeed
+      - ped2InitialPos_x
+      - ped2InitialPos_y
+      - ped2FinalPos_x
+      - ped2FinalPos_y
+      - ped2DesiredSpeed
+      - ExpNo
+  num_obstacles: 0
+  note: "Requires multi-agent support - may skip for initial validation"
+
+#### 7. Parallel Pedestrian
+parallel_ped:
+  description: "Two pedestrians walking parallel (overtaking scenario)"
+  num_trials: ~50
+  max_time: 12.033  # seconds
+  files:
+    initial_final: "Parallel_Ped_initialFinalPos_feed.txt"
+  data_format:
+    initial_final_columns:
+      - ped1InitialPos_x
+      - ped1InitialPos_y
+      - ped1FinalPos_x
+      - ped1FinalPos_y
+      - ped1DesiredSpeed
+      - ped2InitialPos_x
+      - ped2InitialPos_y
+      - ped2FinalPos_x
+      - ped2FinalPos_y
+      - ped2DesiredSpeed
+      - ExpNo
+  num_obstacles: 0
+  note: "Requires multi-agent support - may skip for initial validation"
+
+---
+
+## Full Human Trajectories
+
+### Status: NOT AVAILABLE in current dataset
+The provided data files contain only:
+- Initial positions (where pedestrians started)
+- Final positions (where pedestrians ended)
+- Desired speeds
+
+### What's Missing:
+- Complete trajectory data (position at each timestep)
+- Actual velocities during movement
+- Actual path taken by humans
+
+### Impact:
+**This is NOT a critical issue for initial validation.**
+
+You can still:
+1. ✅ Run your model on the exact same scenarios (same start, goal, obstacles)
+2. ✅ Compare success rates (did your model reach the goal?)
+3. ✅ Compare path lengths (total distance traveled)
+4. ✅ Compare travel times
+5. ✅ Analyze velocity profiles (your model's behavior)
+
+You CANNOT:
+- ❌ Compute trajectory deviation (distance from human path)
+- ❌ Overlay human vs. model trajectories
+- ❌ Compare exact path choices
+
+### Solution Options:
+1. **Contact paper authors** to request full trajectory data
+2. **Use what you have** for initial validation (success rates, path lengths)
+3. **Focus on qualitative comparison** with figures from the VGA paper
+
+---
+
+## Simulation Parameters
+
+### For Validation Experiments
+max_steps: 1000  # Maximum simulation steps
+goal_tolerance: 0.3  # meters - distance to goal considered as "reached"
+dt: 0.05  # seconds - time step (matches UPL physics)
+
+### Success Criteria
+A trial is considered successful if:
+1. Agent reaches within `goal_tolerance` of the goal position
+2. Within `max_steps` simulation steps
+3. Without collision (distance to obstacles > pedestrian_radius)
+
+### Failure Modes
+- Timeout: max_steps reached without reaching goal
+- Stuck: velocity < 0.01 m/s for > 50 steps
+- Collision: distance to obstacle < pedestrian_radius
+
+---
+
+## Validation Priority
+
+### Phase 1 (Start Here):
+1. ✅ SOSP (54 trials) - simplest scenario
+2. ✅ MOSP Case A (239 trials) - low density
+
+### Phase 2:
+3. ✅ MOSP Case B (180 trials) - medium density
+4. ✅ MOSP Case C (170 trials) - high density
+5. ✅ MOSP Case D (260 trials) - very high density
+
+### Phase 3 (Optional):
+6. ⚠️ Head-On (requires multi-agent)
+7. ⚠️ Parallel (requires multi-agent)
+
+---
+
+## References
+
+1. **VGA Paper**: arXiv:2501.05100v2
+   - "Variable Goal Approach (VGA) Incorporating Human Intelligence into the Microscopic Pedestrian Dynamics Models"
+   - Pedestrian radius: 0.2m
+   - Obstacle clustering threshold: pedestrian size
+
+2. **Helbing & Molnár (1995)**: Social Force Model
+   - A = 2000N, B = 0.08m
+   - Relaxation time τ = 0.5s
+
+3. **Weidmann (1993)**: Pedestrian Speed
+   - Comfortable walking speed: 1.34 m/s
+
+4. **Standard Pedestrian Dynamics**:
+   - Pedestrian radius: 0.2-0.3m (shoulder width)
+   - Human-sized obstacle: ~0.25m radius
+
+---
+
+## Data Validation Checklist
+
+Before running experiments, verify:
+- [ ] All data files exist and are readable
+- [ ] Obstacle positions loaded correctly
+- [ ] Initial/final positions parsed correctly
+- [ ] Desired speeds are reasonable (0.5-2.5 m/s)
+- [ ] Obstacle radius set to 0.25m
+- [ ] Pedestrian radius set to 0.2m
+- [ ] UPL parameters match Helbing & Molnár (1995)
+- [ ] Goal tolerance set to 0.3m
+- [ ] Max simulation time sufficient for each scenario
+
+---
+
+## Next Steps
+
+1. **Create data loader**: `validation/data_loading/vga_dataset.py`
+2. **Verify data loading**: Print sample trials to confirm correct parsing
+3. **Run SOSP validation**: Test on all 54 SOSP trials
+4. **Analyze results**: Success rate, path length, travel time
+5. **Expand to MOSP**: Run on Cases A, B, C, D
+6. **Compare with paper**: Match results against VGA paper figures

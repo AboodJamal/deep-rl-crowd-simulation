@@ -1,0 +1,129 @@
+{
+  "total_timesteps": 2000000,
+  "stages": [
+    {
+      "stage": "Stage 1: SOSP (1 obstacle)",
+      "scenarios": [
+        "SOSP"
+      ],
+      "timesteps": 200000,
+      "duration_seconds": 420.102118,
+      "success_rate": 100.0,
+      "episodes": 848,
+      "scenario_breakdown": {
+        "SOSP": {
+          "success_rate": 80.18867924528303,
+          "episodes": 848
+        }
+      }
+    },
+    {
+      "stage": "Stage 2: MOSP_A (4 obstacles)",
+      "scenarios": [
+        "MOSP_A"
+      ],
+      "timesteps": 300000,
+      "duration_seconds": 760.909571,
+      "success_rate": 100.0,
+      "episodes": 1524,
+      "scenario_breakdown": {
+        "MOSP_A": {
+          "success_rate": 87.79527559055119,
+          "episodes": 1524
+        }
+      }
+    },
+    {
+      "stage": "Stage 3: MOSP_C (12 obstacles)",
+      "scenarios": [
+        "MOSP_C"
+      ],
+      "timesteps": 300000,
+      "duration_seconds": 1162.06904,
+      "success_rate": 100.0,
+      "episodes": 1883,
+      "scenario_breakdown": {
+        "MOSP_C": {
+          "success_rate": 93.46787041954329,
+          "episodes": 1883
+        }
+      }
+    },
+    {
+      "stage": "Stage 4: MOSP_B (7 tight obstacles)",
+      "scenarios": [
+        "MOSP_B"
+      ],
+      "timesteps": 300000,
+      "duration_seconds": 911.573848,
+      "success_rate": 100.0,
+      "episodes": 2208,
+      "scenario_breakdown": {
+        "MOSP_B": {
+          "success_rate": 99.32065217391305,
+          "episodes": 2208
+        }
+      }
+    },
+    {
+      "stage": "Stage 5: MOSP_D (16 obstacles)",
+      "scenarios": [
+        "MOSP_D"
+      ],
+      "timesteps": 300000,
+      "duration_seconds": 1381.874203,
+      "success_rate": 100.0,
+      "episodes": 1891,
+      "scenario_breakdown": {
+        "MOSP_D": {
+          "success_rate": 94.97620306716024,
+          "episodes": 1891
+        }
+      }
+    },
+    {
+      "stage": "Stage 6: ALL Mixed",
+      "scenarios": [
+        "SOSP",
+        "MOSP_A",
+        "MOSP_B",
+        "MOSP_C",
+        "MOSP_D"
+      ],
+      "timesteps": 600000,
+      "duration_seconds": 2160.475462,
+      "success_rate": 99.0,
+      "episodes": 4124,
+      "scenario_breakdown": {
+        "MOSP_A": {
+          "success_rate": 99.52198852772467,
+          "episodes": 1046
+        },
+        "MOSP_B": {
+          "success_rate": 99.02557856272838,
+          "episodes": 821
+        },
+        "MOSP_D": {
+          "success_rate": 99.09315746084089,
+          "episodes": 1213
+        },
+        "SOSP": {
+          "success_rate": 99.13419913419914,
+          "episodes": 231
+        },
+        "MOSP_C": {
+          "success_rate": 97.17097170971711,
+          "episodes": 813
+        }
+      }
+    }
+  ],
+  "final_model": "vga_training/models/vga_drl_final.zip",
+  "environment": {
+    "arena_size": "10m x 3.5m",
+    "agent_radius": 0.2,
+    "obstacle_radius": 0.25,
+    "dt": 0.05
+  },
+  "timestamp": "2025-12-19T08:18:59.923509"
+}

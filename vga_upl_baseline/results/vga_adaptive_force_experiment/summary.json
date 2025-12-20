@@ -1,0 +1,24 @@
+{
+  "VGA_UPL_Det": {
+    "SOSP": {
+      "total": 54,
+      "successes": 54,
+      "rate": 100.0
+    },
+    "MOSP_A": {
+      "total": 239,
+      "successes": 169,
+      "rate": 70.7112970711297
+    },
+    "MOSP_B": {
+      "total": 188,
+      "successes": 74,
+      "rate": 39.361702127659576
+    },
+    "MOSP_C": {
+      "total": 184,
+      "successes": 79,
+      "rate": 42.934782608695656
+    }
+  }
+}
