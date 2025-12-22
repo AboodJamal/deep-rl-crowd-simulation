@@ -152,11 +152,17 @@ class ProgressCallback(BaseCallback):
 def create_vga_env(
     scenarios: list,
     split_type: str = "train",
-    data_root: str = r"D:\Abdullah Jamal\downloads\VGA-exp\Pedestrian-Experimental-Data",
+    data_root: str = None,  # Will default to project's data folder
     n_envs: int = 4,
     randomize: bool = True,
 ):
     """Create vectorized VGA environment."""
+
+    # Default to project's data folder if not specified
+    if data_root is None:
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(script_dir)
+        data_root = os.path.join(project_root, "data", "VGA-Experimental-Data")
 
     def make_env():
         if len(scenarios) == 1:
@@ -187,7 +193,7 @@ def create_vga_env(
 def train_vga_curriculum(
     total_timesteps: int = 2000000,
     save_dir: str = "vga_training/models",
-    data_root: str = r"D:\Abdullah Jamal\downloads\VGA-exp\Pedestrian-Experimental-Data",
+    data_root: str = None,  # Will default to project's data folder
     wandb_project: str = "vga-drl-training",
     wandb_run_name: str = None,
     n_envs: int = 4,
@@ -485,8 +491,8 @@ def main():
     parser.add_argument(
         "--data-root",
         type=str,
-        default=r"D:\Abdullah Jamal\downloads\VGA-exp\Pedestrian-Experimental-Data",
-        help="Path to VGA dataset",
+        default=None,  # Will use project's data folder
+        help="Path to VGA dataset (default: data/VGA-Experimental-Data)",
     )
     parser.add_argument(
         "--wandb-project", type=str, default="vga-drl-training", help="W&B project name"

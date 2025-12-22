@@ -53,7 +53,7 @@ This project trains a **Deep Reinforcement Learning (DRL)** agent using **Proxim
 - **Validation:** 15% of trials per scenario (141 trials)
 - **Test:** 15% of trials per scenario (141 trials)
 
-**Data Location:** `D:\Abdullah Jamal\downloads\VGA-exp\Pedestrian-Experimental-Data\`
+**Data Location (included in project):** `data/VGA-Experimental-Data/`
 
 ---
 

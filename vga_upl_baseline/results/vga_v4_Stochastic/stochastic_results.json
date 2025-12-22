@@ -1,0 +1,288 @@
+{
+  "config": {
+    "num_stochastic_runs": 100,
+    "num_trials_per_scenario": 5,
+    "cluster_tolerance": 0.5
+  },
+  "results": {
+    "SOSP": [
+      {
+        "trial_id": 1,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 55.00000000000001,
+          "2": 45.0
+        }
+      },
+      {
+        "trial_id": 14,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 51.0,
+          "2": 49.0
+        }
+      },
+      {
+        "trial_id": 27,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 56.00000000000001,
+          "2": 44.0
+        }
+      },
+      {
+        "trial_id": 40,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 51.0,
+          "2": 49.0
+        }
+      },
+      {
+        "trial_id": 54,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 51.0,
+          "2": 49.0
+        }
+      }
+    ],
+    "MOSP_A": [
+      {
+        "trial_id": 1,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 1,
+        "path_percentages": {
+          "1": 100.0
+        }
+      },
+      {
+        "trial_id": 60,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 56.00000000000001,
+          "2": 44.0
+        }
+      },
+      {
+        "trial_id": 120,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 1,
+        "path_percentages": {
+          "1": 100.0
+        }
+      },
+      {
+        "trial_id": 179,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 1,
+        "path_percentages": {
+          "1": 100.0
+        }
+      },
+      {
+        "trial_id": 239,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 54.0,
+          "2": 46.0
+        }
+      }
+    ],
+    "MOSP_B": [
+      {
+        "trial_id": 1,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 51.0,
+          "2": 49.0
+        }
+      },
+      {
+        "trial_id": 47,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 50.0,
+          "2": 50.0
+        }
+      },
+      {
+        "trial_id": 94,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 52.0,
+          "2": 48.0
+        }
+      },
+      {
+        "trial_id": 141,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 1,
+        "path_percentages": {
+          "1": 100.0
+        }
+      },
+      {
+        "trial_id": 188,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 1,
+        "path_percentages": {
+          "1": 100.0
+        }
+      }
+    ],
+    "MOSP_C": [
+      {
+        "trial_id": 1,
+        "num_runs": 100,
+        "successes": 95,
+        "success_rate": 0.95,
+        "num_distinct_paths": 5,
+        "path_percentages": {
+          "1": 50.0,
+          "2": 28.999999999999996,
+          "3": 15.0,
+          "4": 5.0,
+          "5": 1.0
+        }
+      },
+      {
+        "trial_id": 46,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 1,
+        "path_percentages": {
+          "1": 100.0
+        }
+      },
+      {
+        "trial_id": 92,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 59.0,
+          "2": 41.0
+        }
+      },
+      {
+        "trial_id": 138,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 52.0,
+          "2": 48.0
+        }
+      },
+      {
+        "trial_id": 184,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 53.0,
+          "2": 47.0
+        }
+      }
+    ],
+    "MOSP_D": [
+      {
+        "trial_id": 1,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 54.0,
+          "2": 46.0
+        }
+      },
+      {
+        "trial_id": 69,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 2,
+        "path_percentages": {
+          "1": 65.0,
+          "2": 35.0
+        }
+      },
+      {
+        "trial_id": 138,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 1,
+        "path_percentages": {
+          "1": 100.0
+        }
+      },
+      {
+        "trial_id": 207,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 1,
+        "path_percentages": {
+          "1": 100.0
+        }
+      },
+      {
+        "trial_id": 276,
+        "num_runs": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "num_distinct_paths": 1,
+        "path_percentages": {
+          "1": 100.0
+        }
+      }
+    ]
+  }
+}

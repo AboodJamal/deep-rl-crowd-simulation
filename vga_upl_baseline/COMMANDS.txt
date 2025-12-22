@@ -1,0 +1,279 @@
+================================================================================
+                      VGA+UPL COMMANDS REFERENCE
+                   All Commands to Run VGA+UPL Planner
+================================================================================
+
+Last Updated: December 22, 2025
+Success Rate: 100% (941/941 trials)
+
+================================================================================
+PREREQUISITES
+================================================================================
+
+1. VGA Dataset Location (included in project):
+   data/VGA-Experimental-Data/
+
+2. Working Directory:
+   cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\vga_upl_baseline"
+
+3. Python Environment:
+   - Python >= 3.8
+   - numpy, matplotlib, opencv-python (pip install -r ../requirements.txt)
+
+================================================================================
+COMMAND 1: GENERATE DETERMINISTIC RESULTS (Full Evaluation)
+================================================================================
+
+# Navigate to vga_upl_baseline folder
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\vga_upl_baseline"
+
+# Run deterministic visualization generator
+python scripts/generate_v4_visualizations.py
+
+# This command:
+# - Evaluates ALL 941 trials (100% success rate)
+# - Generates 10 videos per scenario (50 total)
+# - Generates 10 images per scenario (50 total)
+# - Saves comprehensive metrics to JSON
+
+# Expected Runtime: ~5-10 minutes
+# Output Location: results/vga_v4_Det/
+
+# Output Files:
+# results/vga_v4_Det/
+# ├── videos/
+# │   ├── SOSP/      (10 videos)
+# │   ├── MOSP_A/    (10 videos)
+# │   ├── MOSP_B/    (10 videos)
+# │   ├── MOSP_C/    (10 videos)
+# │   └── MOSP_D/    (10 videos)
+# ├── images/
+# │   ├── SOSP/      (10 images)
+# │   ├── MOSP_A/    (10 images)
+# │   ├── MOSP_B/    (10 images)
+# │   ├── MOSP_C/    (10 images)
+# │   └── MOSP_D/    (10 images)
+# ├── evaluation_metrics.json    (per-trial metrics for 941 trials)
+# └── aggregate_metrics.json     (summary statistics)
+
+================================================================================
+COMMAND 2: GENERATE STOCHASTIC VISUALIZATIONS (Paper-Style)
+================================================================================
+
+# Navigate to vga_upl_baseline folder
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\vga_upl_baseline"
+
+# Run stochastic visualization generator
+python scripts/generate_stochastic_visualizations.py
+
+# This command:
+# - Runs 100 stochastic simulations per trial
+# - Clusters similar trajectories
+# - Generates paper-style summary images with path percentages
+# - Creates multi-path overlay videos
+
+# Expected Runtime: ~15-30 minutes
+# Output Location: results/vga_v4_Stochastic/
+
+# Output Files:
+# results/vga_v4_Stochastic/
+# ├── summary_images/
+# │   ├── SOSP/      (path distribution images)
+# │   ├── MOSP_A/
+# │   ├── MOSP_B/
+# │   ├── MOSP_C/
+# │   └── MOSP_D/
+# ├── videos/
+# │   ├── SOSP/      (multi-path overlay videos)
+# │   └── ...
+# └── stochastic_results.json    (clustering analysis)
+
+================================================================================
+COMMAND 3: QUICK TEST (Single Trial)
+================================================================================
+
+# Test a single trial to verify setup
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\vga_upl_baseline"
+
+python -c "
+from models.vga_upl_planner_v4 import VGAUPLPlannerV4
+import numpy as np
+
+planner = VGAUPLPlannerV4(use_probabilistic=False)
+result = planner.simulate(
+    start_pos=np.array([0, 0]),
+    goal_pos=np.array([10, 0]),
+    obstacles=[{'position': [5, 0], 'radius': 0.25}]
+)
+print(f'Success: {result.success}')
+print(f'Path length: {result.metadata[\"path_length\"]:.2f}m')
+print(f'Travel time: {result.metadata[\"travel_time\"]:.2f}s')
+"
+
+# Expected Output:
+# Success: True
+# Path length: ~10.5m
+# Travel time: ~8s
+
+================================================================================
+COMMAND 4: TEST STOCHASTIC MODE
+================================================================================
+
+# Test stochastic mode produces varied paths
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\vga_upl_baseline"
+
+python -c "
+from models.vga_upl_planner_v4 import VGAUPLPlannerV4
+import numpy as np
+
+obstacles = [
+    {'position': [3, 0], 'radius': 0.25},
+    {'position': [6, 0.3], 'radius': 0.25},
+    {'position': [8, -0.2], 'radius': 0.25}
+]
+
+paths = []
+planner = VGAUPLPlannerV4(use_probabilistic=True)
+
+for i in range(10):
+    result = planner.simulate(
+        start_pos=np.array([0, 0]),
+        goal_pos=np.array([10, 0]),
+        obstacles=obstacles
+    )
+    # Hash path by final y-coordinate sign at each obstacle
+    path_sig = tuple(
+        'L' if pos[1] > 0 else 'R' 
+        for pos in result.positions[::50] 
+        if 2 < pos[0] < 9
+    )[:3]
+    paths.append(path_sig)
+
+from collections import Counter
+print('Path distribution (10 runs):')
+for path, count in Counter(paths).most_common():
+    print(f'  {path}: {count} times ({count*10}%)')
+"
+
+# Expected Output: Different path combinations
+
+================================================================================
+COMMAND 5: RUN ON SPECIFIC SCENARIO
+================================================================================
+
+# Load and run on a specific VGA scenario
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\vga_upl_baseline"
+
+python -c "
+from models.vga_upl_planner_v4 import VGAUPLPlannerV4
+from data_loading.vga_dataset import VGADatasetLoader
+import numpy as np
+
+# Load dataset (relative to project root)
+import os
+data_root = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath('.'))), 'data', 'VGA-Experimental-Data')
+dataset = VGADatasetLoader(data_root)
+
+# Choose scenario
+scenario = 'MOSP_B'
+trials = dataset.get_scenario_trials(scenario)
+print(f'{scenario}: {len(trials)} trials')
+
+# Run on first 5 trials
+planner = VGAUPLPlannerV4(use_probabilistic=False)
+successes = 0
+
+for i, trial in enumerate(trials[:5]):
+    result = planner.simulate(
+        start_pos=trial['start_pos'],
+        goal_pos=trial['goal_pos'],
+        obstacles=trial['obstacles'],
+        max_steps=2000
+    )
+    status = '✓' if result.success else '✗'
+    print(f'  Trial {i}: {status} ({result.metadata[\"path_length\"]:.2f}m)')
+    successes += result.success
+
+print(f'Success: {successes}/5')
+"
+
+================================================================================
+COMMAND 6: PYTHON API USAGE
+================================================================================
+
+# Example of using VGA+UPL programmatically
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\vga_upl_baseline"
+
+python -c "
+# Import the planner
+from models.vga_upl_planner_v4 import VGAUPLPlannerV4
+import numpy as np
+
+# Create planner (deterministic)
+planner = VGAUPLPlannerV4(
+    use_probabilistic=False,  # Set True for stochastic
+    agent_radius=0.2,
+    min_clearance=0.02,
+    desired_speed=1.34
+)
+
+# Define scenario
+start = np.array([0, 0])
+goal = np.array([10, 0])
+obstacles = [
+    {'position': [3, 0], 'radius': 0.25},
+    {'position': [5, 0.5], 'radius': 0.25},
+    {'position': [5, -0.5], 'radius': 0.25},
+    {'position': [7, 0], 'radius': 0.25},
+]
+
+# Run simulation
+result = planner.simulate(start, goal, obstacles=obstacles, max_steps=2000)
+
+# Access results
+print(f'Success: {result.success}')
+print(f'Positions shape: {result.positions.shape}')
+print(f'Velocities shape: {result.velocities.shape}')
+print(f'')
+print('Metrics:')
+for key, value in result.metadata.items():
+    if isinstance(value, (int, float)):
+        print(f'  {key}: {value:.4f}' if isinstance(value, float) else f'  {key}: {value}')
+"
+
+================================================================================
+NOTES
+================================================================================
+
+1. Data Path:
+   - If VGA data is in a different location, modify 'data_root' in scripts
+   - Or edit experimental_data_config.yaml
+
+2. Output Customization:
+   - Edit NUM_VIDEOS, NUM_IMAGES in generate_v4_visualizations.py
+   - Edit NUM_STOCHASTIC_RUNS in generate_stochastic_visualizations.py
+
+3. Parameters:
+   - agent_radius=0.2m (robot body)
+   - min_clearance=0.02m (safety margin)
+   - desired_speed=1.34m/s (Weidmann walking speed)
+   - max_steps=2000 (timeout ~100 seconds)
+
+4. Modes:
+   - use_probabilistic=False → Deterministic (100% reproducible)
+   - use_probabilistic=True → Stochastic (path variety)
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Error: "ModuleNotFoundError: No module named 'models'"
+Fix: cd to vga_upl_baseline/ before running
+
+Error: "FileNotFoundError: SOSP_initialFinalPos_feed.txt"
+Fix: Check data_root path in experimental_data_config.yaml
+
+Error: "No FFmpeg writer found"
+Fix: Install ffmpeg (choco install ffmpeg) for video generation
+
+================================================================================

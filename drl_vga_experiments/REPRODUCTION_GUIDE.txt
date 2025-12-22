@@ -10,8 +10,8 @@ Results Reproduced: evaluation_final/ (98.9% success rate)
 PREREQUISITES
 ================================================================================
 
-1. VGA Dataset Location:
-   D:\Abdullah Jamal\downloads\VGA-exp\Pedestrian-Experimental-Data\
+1. VGA Dataset Location (included in project):
+   data/VGA-Experimental-Data/
 
 2. Python Environment:
    - Python >= 3.8
@@ -154,8 +154,9 @@ STATUS: ✅ Fixed (pre_step_pos recording implemented)
 
 ❌ PROBLEM 3: FileNotFoundError for VGA dataset
 CAUSE: Dataset path not found
-SOLUTION: Update DATA_DIR in vga_experimental_env.py:
-         DATA_DIR = Path("D:/Abdullah Jamal/downloads/VGA-exp/Pedestrian-Experimental-Data")
+SOLUTION: Dataset is now included in project at data/VGA-Experimental-Data/
+         Scripts automatically use this location.
+STATUS: ✅ Fixed (data included in project)
 
 ❌ PROBLEM 4: CUDA out of memory during training
 CAUSE: GPU memory insufficient

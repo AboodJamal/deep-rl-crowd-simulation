@@ -39,11 +39,18 @@ class VGAEvaluator:
     def __init__(
         self,
         model_path: str,
-        data_root: str = r"D:\Abdullah Jamal\downloads\VGA-exp\Pedestrian-Experimental-Data",
+        data_root: str = None,  # Will default to project's data folder
         output_dir: str = "vga_training/evaluation",
         vec_normalize_path: str = None,
     ):
         self.model_path = model_path
+        # Default to project's data folder if not specified
+        if data_root is None:
+            import os
+
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            project_root = os.path.dirname(script_dir)
+            data_root = os.path.join(project_root, "data", "VGA-Experimental-Data")
         self.data_root = data_root
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
@@ -606,8 +613,8 @@ def main():
     parser.add_argument(
         "--data-root",
         type=str,
-        default=r"D:\Abdullah Jamal\downloads\VGA-exp\Pedestrian-Experimental-Data",
-        help="Path to VGA dataset",
+        default=None,  # Will use project's data folder
+        help="Path to VGA dataset (default: data/VGA-Experimental-Data)",
     )
     parser.add_argument(
         "--max-trials",

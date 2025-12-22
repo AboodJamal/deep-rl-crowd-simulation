@@ -63,3 +63,4 @@ curriculum_logs/*.json
 # Large result files (>100MB)
 vga_upl_baseline/results/vga_comparison_experiment/comprehensive_results.json
 vga_upl_baseline/results/vga_comparison_experiment_with_drl/comprehensive_results.json
+vga_upl_baseline/archive/

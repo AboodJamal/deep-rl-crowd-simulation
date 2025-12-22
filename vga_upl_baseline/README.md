@@ -1,189 +1,211 @@
-# Validation Framework
+# VGA+UPL Baseline Implementation
 
-This directory contains the scientific validation framework for comparing the DRL pedestrian navigation model against:
-1. Real human experimental data (VGA dataset + Bottleneck dataset)
-2. VGA algorithm (Variable Goal Approach)
-3. Classical baseline (Social Force / JuPedSim-like model)
+**Variable Goal Approach (VGA) + Universal Power Law (UPL) for Pedestrian Navigation**
 
-## Directory Structure
+---
+
+## 🎯 Overview
+
+This implementation achieves **100% success rate** on all VGA experimental scenarios (941 trials total).
+
+### Results Summary
+
+| Scenario | Trials | Success Rate | Mode |
+|----------|--------|--------------|------|
+| SOSP | 54 | **100%** | Deterministic |
+| MOSP_A | 239 | **100%** | Deterministic |
+| MOSP_B | 188 | **100%** | Deterministic |
+| MOSP_C | 184 | **100%** | Deterministic |
+| MOSP_D | 276 | **100%** | Deterministic |
+| **Total** | **941** | **100%** | |
+
+---
+
+## 📁 Project Structure
 
 ```
-validation/
-├── data_loading/          # Parsers for experimental datasets
-│   ├── vga_dataset.py     # VGA GitHub dataset loader (Head-On, SOSP, MOSP)
-│   ├── bottleneck_dataset.py  # Jülich bottleneck dataset loader
-│   └── utils.py           # Common data processing utilities
+vga_upl_baseline/
+├── models/
+│   ├── vga_upl_planner_v4.py       # Main VGA+UPL planner (det & stoch)
+│   ├── upl_physics.py              # Universal Power Law physics engine
+│   ├── model_base.py               # Base class for navigation models
+│   └── __init__.py
 │
-├── models/                # Model interfaces and wrappers
-│   ├── drl_policy_interface.py    # Wrapper for trained DRL agent
-│   ├── vga_planner.py             # VGA algorithm implementation
-│   ├── social_force_baseline.py   # Classical Social Force model
-│   └── model_base.py              # Abstract base class for models
+├── scripts/
+│   ├── generate_v4_visualizations.py      # Deterministic visualizations
+│   └── generate_stochastic_visualizations.py  # Stochastic visualizations
 │
-├── experiments/           # Validation experiment scripts
-│   ├── head_on_validation.py      # Head-On scenario experiments
-│   ├── bottleneck_validation.py   # Bottleneck scenario experiments
-│   ├── sosp_validation.py         # Single Obstacle Single Pedestrian
-│   ├── mosp_validation.py         # Multiple Obstacles Single Pedestrian
-│   └── experiment_runner.py       # Common experiment execution logic
+├── data_loading/
+│   ├── vga_dataset.py              # VGA dataset loader
+│   ├── bottleneck_dataset.py       # Bottleneck scenario loader
+│   └── utils.py
 │
-├── metrics/               # Trajectory analysis and metrics
-│   ├── trajectory_metrics.py      # Core metrics (smoothness, speed, etc.)
-│   ├── comparison_metrics.py      # Model vs human comparison metrics
-│   └── statistical_analysis.py    # Statistical tests and distributions
+├── results/
+│   ├── vga_v4_Det/                 # Deterministic results
+│   │   ├── videos/                 # 50 navigation videos
+│   │   ├── images/                 # 50 trajectory images
+│   │   ├── evaluation_metrics.json # Per-trial metrics (941 trials)
+│   │   └── aggregate_metrics.json  # Summary statistics
+│   │
+│   └── vga_v4_Stochastic/          # Stochastic results
+│       ├── summary_images/         # Paper-style path distributions
+│       ├── videos/                 # Multi-path overlay videos
+│       └── stochastic_results.json
 │
-├── plots/                 # Visualization utilities
-│   ├── trajectory_plots.py        # Trajectory overlay plots
-│   ├── velocity_profiles.py       # Velocity vs position plots (VGA Fig 2)
-│   ├── stochastic_paths.py        # Path distribution plots (VGA Fig 7)
-│   └── publication_style.py       # Matplotlib style configuration
+├── archive/                        # Deprecated files (reference only)
 │
-├── notebooks/             # Interactive analysis notebooks
-│   ├── 01_data_exploration.ipynb       # Explore VGA and Bottleneck datasets
-│   ├── 02_head_on_analysis.ipynb       # Head-On validation results
-│   ├── 03_bottleneck_analysis.ipynb    # Bottleneck validation results
-│   ├── 04_sosp_mosp_analysis.ipynb     # SOSP/MOSP validation results
-│   └── 05_comprehensive_comparison.ipynb  # Final results summary
-│
-└── README.md              # This file
+├── VGA_UPL_ALGORITHM.md           # 📖 DEEP algorithm documentation
+├── COMMANDS.txt                   # 📋 All commands to run
+├── README.md                      # This file
+└── experimental_data_config.yaml  # Data paths configuration
 ```
 
-## Datasets
+---
 
-### 1. VGA GitHub Dataset
-**Source:** https://github.com/kanika201293/Pedestrian-Experimental-Data
+## 🚀 Quick Start
 
-**Scenarios:**
-- Head-On encounters
-- Single Obstacle Single Pedestrian (SOSP)
-- Multiple Obstacles Single Pedestrian (MOSP)
-- Parallel Pedestrian (overtaking)
+### 1. Generate Deterministic Results
 
-**Data Format:**
-- Initial/final position files: `*_initialFinalPos_feed.txt`
-- Full trajectory files: Available in repository
-- Metadata: Scenario type, case ID, trial information
-
-### 2. Bottleneck Individuals Dataset (Jülich)
-**Source:** https://ped.fz-juelich.de/da/doku.php?id=bottleneck_individuals
-
-**Paper:** Boomers et al., 2024
-
-**Experiment Details:**
-- One pedestrian at a time through bottleneck
-- Bottleneck structure: 4m × 2m × 1m
-- Variables:
-  - Length: 0.2m, 1.0m, 2.0m
-  - Width: 0.4m, 0.5m, 0.6m, 0.7m, 0.8m, 1.0m
-  - Approach angle: -90°, -60°, -30°, 0°, 30°, 60°, 90°
-  - Motivation: normal vs hurry
-  - Goal location: straight, 30° left, 30° right
-
-**Data Format:**
-- Metadata: JSON files
-- Trajectories: HDF5 and TXT formats
-- Videos and MoCap data available
-
-## Metrics
-
-### Path Quality Metrics
-1. **Path Smoothness**: Integral of squared curvature
-2. **Speed Deviation**: Standard deviation normalized by mean
-3. **Oscillation**: Measure of direction changes and backwards movement
-4. **Travel Time**: Time from start to goal
-
-### Comparison Metrics
-1. **Trajectory Deviation**: Mean Euclidean distance from human path
-2. **Velocity Profile**: V/V_des vs position (VGA Figure 2 style)
-3. **Collision Rate**: Overlap with obstacles or other agents
-4. **Stuck Rate**: Fraction of failed runs
-
-### Stochastic Analysis
-1. **Path Distribution**: Probability of different path choices (VGA Figure 7 style)
-2. **Variance Analysis**: Spread in trajectories from same initial conditions
-
-## Usage
-
-### 1. Download Datasets
 ```bash
-# Download VGA dataset
-cd validation/data_loading
-# TODO: Add download instructions
-
-# Download Bottleneck dataset
-# TODO: Add download instructions
+cd vga_upl_baseline
+python scripts/generate_v4_visualizations.py
 ```
 
-### 2. Run Validation Experiments
+**Outputs:**
+- 10 videos per scenario (50 total)
+- 10 images per scenario (50 total)
+- `evaluation_metrics.json` - Metrics for ALL 941 trials
+- `aggregate_metrics.json` - Summary statistics
+
+### 2. Generate Stochastic Visualizations
+
 ```bash
-# Head-On validation
-python validation/experiments/head_on_validation.py --num-runs 100 --output results/head_on
-
-# Bottleneck validation
-python validation/experiments/bottleneck_validation.py --num-runs 50 --output results/bottleneck
+python scripts/generate_stochastic_visualizations.py
 ```
 
-### 3. Generate Plots
-```bash
-# Generate all comparison plots
-python validation/plots/trajectory_plots.py --data results/head_on
-python validation/plots/velocity_profiles.py --data results/bottleneck
+**Outputs:**
+- Paper-style summary images (path distributions with percentages)
+- Multi-path overlay videos
+- `stochastic_results.json` - Path clustering analysis
+
+---
+
+## ⚙️ Key Parameters
+
+| Parameter | Value | Description |
+|-----------|-------|-------------|
+| `agent_radius` | 0.2m | Robot body radius |
+| `min_clearance` | 0.02m | Safety margin from obstacles |
+| `desired_speed` | 1.34m/s | Target walking speed (Weidmann) |
+| `max_steps` | 2000 | Maximum simulation steps |
+| `dt` | 0.05s | Time step |
+
+---
+
+## 🔄 Operating Modes
+
+### Deterministic Mode (`use_probabilistic=False`)
+
+- **Behavior:** Always selects the minimum-deviation path around obstacles
+- **Reproducibility:** 100% reproducible (same input → same output)
+- **Use Case:** Evaluation, benchmarking, consistent results
+
+```python
+from models.vga_upl_planner_v4 import VGAUPLPlannerV4
+
+planner = VGAUPLPlannerV4(use_probabilistic=False)
+result = planner.simulate(start, goal, obstacles=obstacles)
 ```
 
-### 4. Interactive Analysis
-```bash
-# Launch Jupyter
-jupyter notebook validation/notebooks/
+### Stochastic Mode (`use_probabilistic=True`)
+
+- **Behavior:** Boltzmann selection for path variety
+- **Path Variety:** Multiple distinct routes around obstacles
+- **Use Case:** Human-like behavior simulation, path diversity analysis
+
+```python
+planner = VGAUPLPlannerV4(use_probabilistic=True)
+# Each run may produce different paths
 ```
 
-## Requirements
+---
 
+## 📊 Metrics Computed
+
+The planner computes comprehensive metrics for each trial:
+
+### Navigation Metrics
+- `success` - Goal reached within threshold
+- `travel_time` - Total navigation time
+- `path_length` - Actual distance traveled
+- `path_efficiency` - Optimal / Actual path length
+
+### Safety Metrics
+- `num_collisions` - Collision count
+- `min_clearance` - Minimum distance to obstacles
+- `danger_zone_ratio` - Time spent in danger zone
+
+### Smoothness Metrics
+- `average_speed`, `speed_variance`
+- `average_acceleration`, `max_acceleration`
+- `average_jerk`, `max_jerk`
+- `direction_changes`, `oscillation_index`
+
+### VGA-Specific Metrics
+- `num_subgoals` - Subgoals used during navigation
+- `subgoal_switch_rate` - Subgoal changes per second
+- `subgoal_history` - Full subgoal sequence
+
+---
+
+## 📖 Algorithm Documentation
+
+For a **deep dive** into how VGA+UPL works (both deterministic and stochastic modes), see:
+
+📄 **[VGA_UPL_ALGORITHM.md](VGA_UPL_ALGORITHM.md)**
+
+This includes:
+- Mathematical foundations
+- Geometric subgoal computation
+- Stochastic decision making
+- Code walkthrough with line references
+
+---
+
+## 📋 Commands Reference
+
+See **[COMMANDS.txt](COMMANDS.txt)** for all available commands.
+
+---
+
+## 📂 Data Requirements
+
+VGA experimental data is included in the project:
 ```
-numpy>=1.24.0
-pandas>=2.0.0
-matplotlib>=3.7.0
-scipy>=1.10.0
-h5py>=3.8.0
-gymnasium>=0.28.0
-stable-baselines3>=2.0.0
-torch>=2.0.0
-scikit-learn>=1.3.0
+../data/VGA-Experimental-Data/
 ```
 
-## Validation Goals
+**Required Files:**
+- `SOSP_initialFinalPos_feed.txt`
+- `SOSP_obstPos_feed.txt`
+- `MOSP_CaseA_initialFinalPos_feed.txt`
+- `MOSP_CaseA_obstPos_feed.txt`
+- (Same for MOSP_B, MOSP_C, MOSP_D)
 
-The validation framework aims to answer:
+---
 
-1. **How does DRL compare to classical models?**
-   - VGA (geometric planning)
-   - Social Force (physics-based)
+## 🔬 Comparison with DRL
 
-2. **How realistic is DRL compared to human behavior?**
-   - Trajectory similarity
-   - Velocity profiles
-   - Path choice distributions
+| Aspect | VGA+UPL | DRL Agent |
+|--------|---------|-----------|
+| Success Rate | **100%** | 98.9% |
+| Training Required | No | Yes (2M steps) |
+| Interpretability | High | Low |
+| Path Variety | Stochastic mode | Policy variance |
+| Computation | ~0.01s/trial | ~0.05s/trial |
 
-3. **What are the strengths and limitations?**
-   - Success rates across scenarios
-   - Edge cases and failure modes
-   - Computational efficiency
+---
 
-## Publication-Ready Outputs
-
-All plots are configured for publication quality:
-- Vector graphics (PDF/SVG)
-- LaTeX-style labels
-- Consistent color schemes
-- Clear legends and annotations
-- Matching VGA paper figure styles
-
-## References
-
-1. **VGA Paper**: "Variable Goal Approach (VGA): Incorporating Human Intelligence into Microscopic Pedestrian Dynamics Models"
-   - arXiv:2501.05100v2
-
-2. **Bottleneck Paper**: Boomers et al., 2024, "How Approaching Angle, Bottleneck Width and Walking Speed Affect the Use of a Bottleneck by Individuals"
-
-3. **Social Force Model**: Helbing & Molnár, 1995
-
-4. **JuPedSim**: https://www.jupedsim.org/
+**Last Updated:** December 22, 2025  
+**Version:** 4.0  
+**Status:** ✅ Production Ready - 100% Success

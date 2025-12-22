@@ -251,8 +251,11 @@ def test_loader():
     print("Testing VGA Dataset Loader...")
     print("=" * 60)
     
-    # Initialize loader
-    data_root = r"D:\Abdullah Jamal\downloads\VGA-exp\Pedestrian-Experimental-Data"
+    # Initialize loader - use project's data folder
+    import os
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(script_dir))
+    data_root = os.path.join(project_root, "data", "VGA-Experimental-Data")
     loader = VGADatasetLoader(data_root, obstacle_radius=0.25)
     
     # Load all data

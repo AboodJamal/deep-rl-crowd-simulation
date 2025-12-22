@@ -1,0 +1,327 @@
+================================================================================
+                      DRL ON VGA DATASET - COMMANDS REFERENCE
+              All Commands to Train and Evaluate DRL Agent
+================================================================================
+
+Last Updated: December 22, 2025
+Trained Model Success Rate: 98.9% (932/941 trials)
+
+================================================================================
+PREREQUISITES
+================================================================================
+
+1. VGA Dataset Location (included in project):
+   data/VGA-Experimental-Data/
+
+2. Working Directory:
+   cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\drl_vga_experiments"
+
+3. Python Environment:
+   - Python >= 3.8
+   - gymnasium >= 0.28
+   - stable-baselines3 >= 2.0
+   - torch >= 2.0
+   - numpy, pandas, matplotlib, opencv-python, wandb
+
+4. Hardware:
+   - GPU: NVIDIA RTX 3050 or better (recommended for training)
+   - RAM: 16GB+
+
+5. Pre-trained Model Files (in models/):
+   ✅ vga_drl_final.zip                    (Trained PPO policy)
+   ✅ vga_drl_stage6_vecnormalize.pkl      (CRITICAL - normalization stats)
+
+================================================================================
+COMMAND 1: EVALUATE PRE-TRAINED MODEL (Reproduce 98.9% Results)
+================================================================================
+
+# Navigate to drl_vga_experiments folder
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\drl_vga_experiments"
+
+# ⚠️ CRITICAL: Must include --vec-normalize flag!
+# Without it, observations are not properly scaled and agent WILL FAIL!
+
+python evaluate_vga_drl.py ^
+    --model models/vga_drl_final.zip ^
+    --vec-normalize models/vga_drl_stage6_vecnormalize.pkl ^
+    --output-dir evaluation_test/ ^
+    --deterministic
+
+# Expected Runtime: ~10-15 minutes
+# Expected Results:
+#   Overall Success Rate: 98.9%
+#   SOSP:    100.0% (54/54)
+#   MOSP_A:  100.0% (239/239)
+#   MOSP_B:   98.9% (186/188)
+#   MOSP_C:  100.0% (184/184)
+#   MOSP_D:   99.3% (274/276)
+
+# Output Files:
+# evaluation_test/
+# ├── results/
+# │   └── evaluation_results.json
+# ├── trajectories/
+# │   ├── SOSP/
+# │   ├── MOSP_A/
+# │   ├── MOSP_B/
+# │   ├── MOSP_C/
+# │   └── MOSP_D/
+# └── videos/
+#     └── ...
+
+================================================================================
+COMMAND 2: FULL EVALUATION WITH VIDEOS & TRAJECTORIES
+================================================================================
+
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\drl_vga_experiments"
+
+python evaluate_vga_drl.py ^
+    --model models/vga_drl_final.zip ^
+    --vec-normalize models/vga_drl_stage6_vecnormalize.pkl ^
+    --output-dir evaluation_full/ ^
+    --num-trajectories 100 ^
+    --num-videos 50 ^
+    --deterministic
+
+# Options:
+#   --num-trajectories N : Generate N trajectory images per scenario
+#   --num-videos N       : Generate N videos per scenario
+#   --deterministic      : Use deterministic policy (recommended)
+
+================================================================================
+COMMAND 3: TRAIN FROM SCRATCH (Optional - ~2 hours)
+================================================================================
+
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\drl_vga_experiments"
+
+# Full curriculum training (2M timesteps, 6 stages)
+python train_vga_drl.py ^
+    --timesteps 2000000 ^
+    --save-dir models/ ^
+    --n-envs 8 ^
+    --wandb-project vga-drl-training
+
+# Curriculum Stages:
+#   Stage 1: SOSP only (easiest)
+#   Stage 2: SOSP + MOSP_A
+#   Stage 3: SOSP + MOSP_A + MOSP_C
+#   Stage 4: All scenarios
+#   Stage 5: Hard focus (MOSP_B, MOSP_D)
+#   Stage 6: Final mixed training
+
+# Expected Runtime: ~2 hours on RTX 3050
+# Output Files:
+#   models/vga_drl_stage1.zip ... vga_drl_stage6.zip
+#   models/vga_drl_final.zip
+#   models/vga_drl_stage6_vecnormalize.pkl  ← CRITICAL!
+#   models/training_summary.json
+
+================================================================================
+COMMAND 4: RESUME TRAINING FROM CHECKPOINT
+================================================================================
+
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\drl_vga_experiments"
+
+python train_vga_drl.py ^
+    --timesteps 500000 ^
+    --save-dir models/ ^
+    --resume-from models/vga_drl_stage4.zip ^
+    --n-envs 8
+
+================================================================================
+COMMAND 5: QUICK TEST (Verify Model Loads)
+================================================================================
+
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\drl_vga_experiments"
+
+python -c "
+from stable_baselines3 import PPO
+from stable_baselines3.common.vec_env import VecNormalize, DummyVecEnv
+from vga_experimental_env import VGAExperimentalEnv
+
+# Load model
+model = PPO.load('models/vga_drl_final.zip')
+print('[OK] Model loaded successfully')
+print(f'     Policy: {type(model.policy).__name__}')
+print(f'     Observation space: {model.observation_space}')
+print(f'     Action space: {model.action_space}')
+
+# Create test environment
+env = DummyVecEnv([lambda: VGAExperimentalEnv(scenario='SOSP')])
+env = VecNormalize.load('models/vga_drl_stage6_vecnormalize.pkl', env)
+env.training = False
+env.norm_reward = False
+print('[OK] VecNormalize loaded successfully')
+
+# Run one episode
+obs = env.reset()
+done = False
+steps = 0
+while not done and steps < 500:
+    action, _ = model.predict(obs, deterministic=True)
+    obs, reward, done, info = env.step(action)
+    steps += 1
+
+print(f'[OK] Test episode completed')
+print(f'     Steps: {steps}')
+print(f'     Goal reached: {info[0].get(\"goal_reached\", False)}')
+"
+
+================================================================================
+COMMAND 6: SINGLE SCENARIO EVALUATION
+================================================================================
+
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\drl_vga_experiments"
+
+# Evaluate only on MOSP_B (hardest scenario)
+python -c "
+from stable_baselines3 import PPO
+from stable_baselines3.common.vec_env import VecNormalize, DummyVecEnv
+from vga_experimental_env import VGAExperimentalEnv
+
+model = PPO.load('models/vga_drl_final.zip')
+
+env = DummyVecEnv([lambda: VGAExperimentalEnv(scenario='MOSP_B', randomize_start_goal=False)])
+vec_env = VecNormalize.load('models/vga_drl_stage6_vecnormalize.pkl', env)
+vec_env.training = False
+
+base_env = env.envs[0]
+num_trials = base_env.num_trials
+successes = 0
+
+for trial_idx in range(num_trials):
+    base_env.current_trial = trial_idx
+    obs = vec_env.reset()
+    
+    done = False
+    steps = 0
+    while not done and steps < 500:
+        action, _ = model.predict(obs, deterministic=True)
+        obs, _, done, info = vec_env.step(action)
+        steps += 1
+    
+    if info[0].get('goal_reached', False):
+        successes += 1
+
+print(f'MOSP_B: {successes}/{num_trials} ({100*successes/num_trials:.1f}%)')
+"
+
+================================================================================
+COMMAND 7: TRAINING WITH WANDB LOGGING
+================================================================================
+
+# Set up Weights & Biases for experiment tracking
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\drl_vga_experiments"
+
+# Login to W&B (one-time)
+wandb login
+
+# Train with W&B logging
+python train_vga_drl.py ^
+    --timesteps 2000000 ^
+    --save-dir models_new/ ^
+    --n-envs 8 ^
+    --wandb-project vga-drl-training ^
+    --wandb-run-name experiment_v2
+
+# View results at: https://wandb.ai/<your-username>/vga-drl-training
+
+================================================================================
+COMMAND 8: CUSTOM ENVIRONMENT TEST
+================================================================================
+
+cd "C:\Users\Abdullah Jamal\Desktop\College\Forth year\First Term\training\bot3-enhanced\test-2\trains on everything- eval on everything\drl_vga_experiments"
+
+python -c "
+from vga_experimental_env import VGAExperimentalEnv
+import numpy as np
+
+# Create environment for MOSP_D (16 obstacles)
+env = VGAExperimentalEnv(
+    scenario='MOSP_D',
+    data_root='../data/VGA-Experimental-Data',  # Relative to drl_vga_experiments/
+    randomize_start_goal=False
+)
+
+print(f'Scenario: MOSP_D')
+print(f'Observation space: {env.observation_space}')
+print(f'Action space: {env.action_space}')
+print(f'Number of trials: {env.num_trials}')
+print(f'Arena size: {env.arena_width}m x {env.arena_height}m')
+
+# Run random episode
+obs, info = env.reset()
+print(f'Initial observation shape: {obs.shape}')
+
+total_reward = 0
+steps = 0
+while True:
+    action = env.action_space.sample()  # Random action
+    obs, reward, terminated, truncated, info = env.step(action)
+    total_reward += reward
+    steps += 1
+    
+    if terminated or truncated or steps > 500:
+        break
+
+print(f'Episode ended after {steps} steps')
+print(f'Total reward: {total_reward:.2f}')
+print(f'Goal reached: {info.get(\"goal_reached\", False)}')
+"
+
+================================================================================
+IMPORTANT NOTES
+================================================================================
+
+1. VecNormalize is CRITICAL:
+   - ALWAYS use --vec-normalize flag when evaluating
+   - Without it, observations are not scaled correctly
+   - The agent WILL fail without proper normalization
+
+2. Deterministic vs Stochastic:
+   - Use --deterministic for reproducible results
+   - Remove flag for stochastic policy sampling
+
+3. Model Files Required:
+   - vga_drl_final.zip (the trained policy)
+   - vga_drl_stage6_vecnormalize.pkl (observation normalizer)
+   
+4. Hardware:
+   - GPU significantly speeds up training
+   - CPU-only evaluation is fine
+
+5. Data Path:
+   - Modify data_root if VGA data is in different location
+
+================================================================================
+COMPARISON: DRL VS VGA+UPL
+================================================================================
+
+| Metric        | DRL Agent | VGA+UPL |
+|---------------|-----------|---------|
+| Success Rate  | 98.9%     | 100%    |
+| MOSP_B        | 98.9%     | 100%    |
+| Training Time | ~2 hours  | None    |
+| Inference     | ~0.05s    | ~0.01s  |
+| Interpretable | No        | Yes     |
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Error: "Could not load VecNormalize stats"
+Fix: Ensure vga_drl_stage6_vecnormalize.pkl exists in models/
+
+Error: "CUDA out of memory"
+Fix: Reduce n_envs (try 4 instead of 8)
+
+Error: "ModuleNotFoundError: stable_baselines3"
+Fix: pip install stable-baselines3[extra]
+
+Error: "FileNotFoundError: SOSP_initialFinalPos_feed.txt"
+Fix: Check data_root path points to correct VGA data location
+
+Warning: "Observation out of bounds"
+Fix: Ensure using VecNormalize when evaluating
+
+================================================================================

@@ -41,8 +41,8 @@ vga_parameters:
 
 ## Dataset Specifications
 
-### Data Location
-data_root: "D:\\Abdullah Jamal\\downloads\\VGA-exp\\Pedestrian-Experimental-Data"
+### Data Location (relative to project root)
+data_root: "../data/VGA-Experimental-Data"
 
 ### Available Datasets
 

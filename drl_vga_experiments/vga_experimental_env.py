@@ -119,7 +119,7 @@ class VGAExperimentalEnv(gym.Env):
     def __init__(
         self,
         scenario: str = "SOSP",
-        data_root: str = r"D:\Abdullah Jamal\downloads\VGA-exp\Pedestrian-Experimental-Data",
+        data_root: str = None,  # Will default to project's data folder
         trial_indices: List[
             int
         ] = None,  # Which trials to use (for train/val/test split)
@@ -129,6 +129,13 @@ class VGAExperimentalEnv(gym.Env):
         super().__init__()
 
         self.scenario = scenario
+        # Default to project's data folder if not specified
+        if data_root is None:
+            import os
+
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            project_root = os.path.dirname(script_dir)
+            data_root = os.path.join(project_root, "data", "VGA-Experimental-Data")
         self.data_root = Path(data_root)
         self.render_mode = render_mode
         self.randomize_start_goal = randomize_start_goal
@@ -718,7 +725,7 @@ class VGAMixedEnv(gym.Env):
 
     def __init__(
         self,
-        data_root: str = r"D:\Abdullah Jamal\downloads\VGA-exp\Pedestrian-Experimental-Data",
+        data_root: str = None,  # Will default to project's data folder
         scenarios: List[str] = None,
         train_split: float = 0.7,
         split_type: str = "train",  # "train", "val", "test"
@@ -729,6 +736,14 @@ class VGAMixedEnv(gym.Env):
 
         if scenarios is None:
             scenarios = ["SOSP", "MOSP_A", "MOSP_B", "MOSP_C", "MOSP_D"]
+
+        # Default to project's data folder if not specified
+        if data_root is None:
+            import os
+
+            script_dir = os.path.dirname(os.path.abspath(__file__))
+            project_root = os.path.dirname(script_dir)
+            data_root = os.path.join(project_root, "data", "VGA-Experimental-Data")
 
         self.scenarios = scenarios
         self.data_root = data_root
