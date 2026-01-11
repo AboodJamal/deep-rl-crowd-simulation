@@ -1,0 +1,17 @@
+# Multi-Agent Corridor Navigation Requirements
+# Simplified dependencies for the clean version
+
+# Core Deep Learning
+torch>=2.0.0
+numpy>=1.24.0
+
+# Environment
+gymnasium>=0.28.0
+
+# Visualization & Videos
+matplotlib>=3.8.0
+pillow>=10.0.0
+
+# Utilities (optional)
+tqdm>=4.66.0
+pyarrow>=12.0.0,<15.0.0

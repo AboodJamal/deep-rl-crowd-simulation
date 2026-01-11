@@ -1,6 +1,0 @@
-numpy
-gymnasium
-stable-baselines3[extra]
-matplotlib
-wandb
-torch

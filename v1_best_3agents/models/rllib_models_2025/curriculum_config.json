@@ -1,0 +1,98 @@
+{
+  "total_stages": 15,
+  "total_timesteps": 26500000,
+  "architecture": "CNN+Attention+LSTM",
+  "tier": "2+",
+  "stages": [
+    {
+      "name": "stage01_2agents_sparse",
+      "num_agents": 2,
+      "obstacle_density": 0.02,
+      "timesteps": 1000000
+    },
+    {
+      "name": "stage02_2agents_medium",
+      "num_agents": 2,
+      "obstacle_density": 0.04,
+      "timesteps": 1000000
+    },
+    {
+      "name": "stage03_2agents_dense",
+      "num_agents": 2,
+      "obstacle_density": 0.06,
+      "timesteps": 1000000
+    },
+    {
+      "name": "stage04_2agents_medium_long",
+      "num_agents": 2,
+      "obstacle_density": 0.04,
+      "timesteps": 1500000
+    },
+    {
+      "name": "stage05_2agents_dense_long",
+      "num_agents": 2,
+      "obstacle_density": 0.06,
+      "timesteps": 1500000
+    },
+    {
+      "name": "stage06_3agents_sparse",
+      "num_agents": 3,
+      "obstacle_density": 0.02,
+      "timesteps": 1500000
+    },
+    {
+      "name": "stage07_3agents_medium",
+      "num_agents": 3,
+      "obstacle_density": 0.04,
+      "timesteps": 1500000
+    },
+    {
+      "name": "stage08_3agents_dense",
+      "num_agents": 3,
+      "obstacle_density": 0.06,
+      "timesteps": 1500000
+    },
+    {
+      "name": "stage09_3agents_medium_long",
+      "num_agents": 3,
+      "obstacle_density": 0.04,
+      "timesteps": 2000000
+    },
+    {
+      "name": "stage10_3agents_dense_long",
+      "num_agents": 3,
+      "obstacle_density": 0.06,
+      "timesteps": 2000000
+    },
+    {
+      "name": "stage11_3agents_very_dense",
+      "num_agents": 3,
+      "obstacle_density": 0.08,
+      "timesteps": 2000000
+    },
+    {
+      "name": "stage12_3agents_extreme",
+      "num_agents": 3,
+      "obstacle_density": 0.1,
+      "timesteps": 2500000
+    },
+    {
+      "name": "stage13_4agents_medium",
+      "num_agents": 4,
+      "obstacle_density": 0.04,
+      "timesteps": 2000000
+    },
+    {
+      "name": "stage14_4agents_dense",
+      "num_agents": 4,
+      "obstacle_density": 0.06,
+      "timesteps": 2500000
+    },
+    {
+      "name": "stage15_4agents_extreme",
+      "num_agents": 4,
+      "obstacle_density": 0.08,
+      "timesteps": 3000000
+    }
+  ]
+}

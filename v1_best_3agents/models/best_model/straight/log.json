@@ -1,0 +1,114 @@
+[
+  {
+    "update": 10,
+    "reward": 4757.4949742764375,
+    "all_success": 0.6962025316455697,
+    "per_agent": 0.7848101265822784,
+    "length": 494.8987341772152,
+    "obs_coll": 0.46835443037974683
+  },
+  {
+    "update": 20,
+    "reward": 5183.0785114033715,
+    "all_success": 1.0,
+    "per_agent": 1.0,
+    "length": 271.57,
+    "obs_coll": 1.49
+  },
+  {
+    "update": 30,
+    "reward": 4964.459558209086,
+    "all_success": 0.96,
+    "per_agent": 0.9866666666666666,
+    "length": 257.31,
+    "obs_coll": 0.6
+  },
+  {
+    "update": 40,
+    "reward": 4797.446290421535,
+    "all_success": 0.89,
+    "per_agent": 0.9633333333333334,
+    "length": 294.35,
+    "obs_coll": 0.97
+  },
+  {
+    "update": 50,
+    "reward": 4923.035395880615,
+    "all_success": 0.92,
+    "per_agent": 0.9733333333333334,
+    "length": 269.64,
+    "obs_coll": 0.06
+  },
+  {
+    "update": 60,
+    "reward": 4884.799693712188,
+    "all_success": 0.95,
+    "per_agent": 0.9766666666666666,
+    "length": 248.49,
+    "obs_coll": 0.19
+  },
+  {
+    "update": 70,
+    "reward": 4790.229589200636,
+    "all_success": 0.99,
+    "per_agent": 0.9966666666666666,
+    "length": 207.41,
+    "obs_coll": 0.42
+  },
+  {
+    "update": 80,
+    "reward": 4787.343304671658,
+    "all_success": 0.98,
+    "per_agent": 0.9933333333333333,
+    "length": 216.96,
+    "obs_coll": 0.38
+  },
+  {
+    "update": 90,
+    "reward": 4750.707090056678,
+    "all_success": 1.0,
+    "per_agent": 1.0,
+    "length": 197.67,
+    "obs_coll": 0.88
+  },
+  {
+    "update": 100,
+    "reward": 4701.872135703357,
+    "all_success": 1.0,
+    "per_agent": 1.0,
+    "length": 189.65,
+    "obs_coll": 0.05
+  },
+  {
+    "update": 110,
+    "reward": 4651.191150367985,
+    "all_success": 1.0,
+    "per_agent": 1.0,
+    "length": 182.6,
+    "obs_coll": 0.04
+  },
+  {
+    "update": 120,
+    "reward": 4643.885067368333,
+    "all_success": 1.0,
+    "per_agent": 1.0,
+    "length": 185.05,
+    "obs_coll": 1.23
+  },
+  {
+    "update": 130,
+    "reward": 4663.828548794837,
+    "all_success": 0.96,
+    "per_agent": 0.9866666666666667,
+    "length": 210.85,
+    "obs_coll": 0.0
+  },
+  {
+    "update": 140,
+    "reward": 4665.064902919061,
+    "all_success": 1.0,
+    "per_agent": 1.0,
+    "length": 186.07,
+    "obs_coll": 0.13
+  }
+]

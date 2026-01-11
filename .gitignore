@@ -30,33 +30,10 @@ Thumbs.db
 # Weights & Biases
 wandb/
 
-# Training outputs
-runs/
-checkpoints/*.zip
-checkpoints/*.pkl
-
-# Keep model directories but ignore large files
-models/*.zip
-models/*.pkl
-
-# Evaluation results (keep structure, ignore videos)
-eval_*/**.mp4
-eval_*/**.avi
-
 # Logs
 *.log
-curriculum_logs/*.json
 
 # Temporary files
 *.tmp
 *.bak
 *.orig
-
-# PyTorch
-*.pt
-*.pth
-
-# Keep important files
-!models/README.md
-!checkpoints/README.md
-!eval_2m/complete_results.json

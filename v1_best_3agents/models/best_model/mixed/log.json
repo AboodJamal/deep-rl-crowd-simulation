@@ -1,0 +1,290 @@
+[
+  {
+    "update": 10,
+    "reward": 5216.481822749855,
+    "all_success": 0.3448275862068966,
+    "per_agent": 0.7816091954022988,
+    "length": 666.6034482758621,
+    "obs_coll": 6.793103448275862
+  },
+  {
+    "update": 20,
+    "reward": 5129.113489940711,
+    "all_success": 0.49,
+    "per_agent": 0.83,
+    "length": 616.26,
+    "obs_coll": 5.26
+  },
+  {
+    "update": 30,
+    "reward": 5321.228472259761,
+    "all_success": 0.46,
+    "per_agent": 0.8166666666666668,
+    "length": 628.82,
+    "obs_coll": 5.51
+  },
+  {
+    "update": 40,
+    "reward": 5659.559230286586,
+    "all_success": 0.54,
+    "per_agent": 0.8433333333333334,
+    "length": 590.77,
+    "obs_coll": 4.58
+  },
+  {
+    "update": 50,
+    "reward": 5626.729606610774,
+    "all_success": 0.54,
+    "per_agent": 0.8466666666666669,
+    "length": 567.37,
+    "obs_coll": 2.32
+  },
+  {
+    "update": 60,
+    "reward": 5605.364294359119,
+    "all_success": 0.61,
+    "per_agent": 0.87,
+    "length": 548.8,
+    "obs_coll": 1.96
+  },
+  {
+    "update": 70,
+    "reward": 5640.619958096425,
+    "all_success": 0.6,
+    "per_agent": 0.86,
+    "length": 580.35,
+    "obs_coll": 4.32
+  },
+  {
+    "update": 80,
+    "reward": 5758.428201380781,
+    "all_success": 0.67,
+    "per_agent": 0.8866666666666666,
+    "length": 538.38,
+    "obs_coll": 3.75
+  },
+  {
+    "update": 90,
+    "reward": 5899.302055007429,
+    "all_success": 0.58,
+    "per_agent": 0.8600000000000001,
+    "length": 581.41,
+    "obs_coll": 2.29
+  },
+  {
+    "update": 100,
+    "reward": 5760.366674708686,
+    "all_success": 0.59,
+    "per_agent": 0.8600000000000001,
+    "length": 574.12,
+    "obs_coll": 2.9
+  },
+  {
+    "update": 110,
+    "reward": 5969.711998448868,
+    "all_success": 0.55,
+    "per_agent": 0.8466666666666666,
+    "length": 592.67,
+    "obs_coll": 2.56
+  },
+  {
+    "update": 120,
+    "reward": 5958.939368990407,
+    "all_success": 0.55,
+    "per_agent": 0.85,
+    "length": 573.42,
+    "obs_coll": 2.06
+  },
+  {
+    "update": 130,
+    "reward": 5792.762251619934,
+    "all_success": 0.61,
+    "per_agent": 0.8633333333333333,
+    "length": 532.44,
+    "obs_coll": 10.96
+  },
+  {
+    "update": 140,
+    "reward": 5850.041488358198,
+    "all_success": 0.67,
+    "per_agent": 0.89,
+    "length": 528.9,
+    "obs_coll": 2.43
+  },
+  {
+    "update": 150,
+    "reward": 5894.04851092851,
+    "all_success": 0.61,
+    "per_agent": 0.87,
+    "length": 549.65,
+    "obs_coll": 7.5
+  },
+  {
+    "update": 160,
+    "reward": 6018.803401549781,
+    "all_success": 0.58,
+    "per_agent": 0.86,
+    "length": 547.8,
+    "obs_coll": 2.08
+  },
+  {
+    "update": 170,
+    "reward": 6084.072443302605,
+    "all_success": 0.52,
+    "per_agent": 0.8400000000000002,
+    "length": 583.91,
+    "obs_coll": 1.89
+  },
+  {
+    "update": 180,
+    "reward": 6090.487204589884,
+    "all_success": 0.45,
+    "per_agent": 0.8166666666666668,
+    "length": 617.25,
+    "obs_coll": 1.93
+  },
+  {
+    "update": 190,
+    "reward": 6058.475289278063,
+    "all_success": 0.47,
+    "per_agent": 0.8233333333333335,
+    "length": 599.95,
+    "obs_coll": 2.59
+  },
+  {
+    "update": 200,
+    "reward": 6146.287902792181,
+    "all_success": 0.47,
+    "per_agent": 0.8233333333333335,
+    "length": 610.56,
+    "obs_coll": 2.41
+  },
+  {
+    "update": 210,
+    "reward": 5896.78881462647,
+    "all_success": 0.59,
+    "per_agent": 0.8633333333333334,
+    "length": 565.02,
+    "obs_coll": 3.3
+  },
+  {
+    "update": 220,
+    "reward": 5873.448626527662,
+    "all_success": 0.6,
+    "per_agent": 0.8666666666666667,
+    "length": 563.43,
+    "obs_coll": 3.6
+  },
+  {
+    "update": 230,
+    "reward": 5822.36168541428,
+    "all_success": 0.74,
+    "per_agent": 0.9133333333333333,
+    "length": 503.93,
+    "obs_coll": 3.46
+  },
+  {
+    "update": 240,
+    "reward": 5731.866220464704,
+    "all_success": 0.78,
+    "per_agent": 0.9266666666666665,
+    "length": 457.74,
+    "obs_coll": 2.85
+  },
+  {
+    "update": 250,
+    "reward": 5668.315015263763,
+    "all_success": 0.85,
+    "per_agent": 0.95,
+    "length": 416.43,
+    "obs_coll": 4.29
+  },
+  {
+    "update": 260,
+    "reward": 5750.366145042229,
+    "all_success": 0.81,
+    "per_agent": 0.9366666666666668,
+    "length": 464.77,
+    "obs_coll": 4.32
+  },
+  {
+    "update": 270,
+    "reward": 5730.052393228502,
+    "all_success": 0.76,
+    "per_agent": 0.9200000000000002,
+    "length": 465.31,
+    "obs_coll": 4.6
+  },
+  {
+    "update": 280,
+    "reward": 5926.551771566406,
+    "all_success": 0.6,
+    "per_agent": 0.8666666666666667,
+    "length": 546.79,
+    "obs_coll": 5.29
+  },
+  {
+    "update": 290,
+    "reward": 5882.717692687705,
+    "all_success": 0.46,
+    "per_agent": 0.82,
+    "length": 615.24,
+    "obs_coll": 6.37
+  },
+  {
+    "update": 300,
+    "reward": 5975.797988017679,
+    "all_success": 0.59,
+    "per_agent": 0.8633333333333334,
+    "length": 564.41,
+    "obs_coll": 3.59
+  },
+  {
+    "update": 310,
+    "reward": 5949.306296172609,
+    "all_success": 0.69,
+    "per_agent": 0.8966666666666667,
+    "length": 532.69,
+    "obs_coll": 3.96
+  },
+  {
+    "update": 320,
+    "reward": 5988.294799713066,
+    "all_success": 0.7,
+    "per_agent": 0.9,
+    "length": 540.08,
+    "obs_coll": 4.35
+  },
+  {
+    "update": 330,
+    "reward": 5778.847129799313,
+    "all_success": 0.83,
+    "per_agent": 0.9433333333333332,
+    "length": 438.39,
+    "obs_coll": 3.18
+  },
+  {
+    "update": 340,
+    "reward": 5699.251575942325,
+    "all_success": 0.84,
+    "per_agent": 0.9466666666666665,
+    "length": 429.82,
+    "obs_coll": 2.56
+  },
+  {
+    "update": 350,
+    "reward": 5964.892447214213,
+    "all_success": 0.71,
+    "per_agent": 0.9033333333333333,
+    "length": 500.12,
+    "obs_coll": 3.01
+  },
+  {
+    "update": 360,
+    "reward": 5809.497964137653,
+    "all_success": 0.65,
+    "per_agent": 0.8833333333333334,
+    "length": 507.95,
+    "obs_coll": 3.58
+  }
+]

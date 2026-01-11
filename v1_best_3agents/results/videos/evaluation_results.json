@@ -1,0 +1,30 @@
+{
+  "straight": {
+    "all_success_rate": 1.0,
+    "per_agent_success": 1.0
+  },
+  "single_wall_bottom": {
+    "all_success_rate": 1.0,
+    "per_agent_success": 1.0
+  },
+  "single_wall_top": {
+    "all_success_rate": 1.0,
+    "per_agent_success": 1.0
+  },
+  "s_curve": {
+    "all_success_rate": 1.0,
+    "per_agent_success": 1.0
+  },
+  "narrow_passage": {
+    "all_success_rate": 1.0,
+    "per_agent_success": 1.0
+  },
+  "chicane": {
+    "all_success_rate": 1.0,
+    "per_agent_success": 1.0
+  },
+  "mixed": {
+    "all_success_rate": 1.0,
+    "per_agent_success": 1.0
+  }
+}

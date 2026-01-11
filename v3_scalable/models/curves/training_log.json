@@ -1,0 +1,194 @@
+[
+  {
+    "update": 10,
+    "reward": 5979.276119486895,
+    "all_success": 0.92,
+    "per_agent_success": 0.9840000000000001,
+    "episode_length": 291.45,
+    "obstacle_collisions": 7.79
+  },
+  {
+    "update": 20,
+    "reward": 6005.690838036614,
+    "all_success": 0.91,
+    "per_agent_success": 0.982,
+    "episode_length": 292.19,
+    "obstacle_collisions": 7.13
+  },
+  {
+    "update": 30,
+    "reward": 5881.107806062038,
+    "all_success": 0.85,
+    "per_agent_success": 0.97,
+    "episode_length": 306.49,
+    "obstacle_collisions": 7.96
+  },
+  {
+    "update": 40,
+    "reward": 5750.936130028651,
+    "all_success": 0.8,
+    "per_agent_success": 0.958,
+    "episode_length": 323.88,
+    "obstacle_collisions": 15.31
+  },
+  {
+    "update": 50,
+    "reward": 5889.85403888269,
+    "all_success": 0.8,
+    "per_agent_success": 0.9580000000000001,
+    "episode_length": 323.55,
+    "obstacle_collisions": 9.1
+  },
+  {
+    "update": 60,
+    "reward": 5744.054038041036,
+    "all_success": 0.64,
+    "per_agent_success": 0.9099999999999998,
+    "episode_length": 436.59,
+    "obstacle_collisions": 11.98
+  },
+  {
+    "update": 70,
+    "reward": 5872.960767135091,
+    "all_success": 0.66,
+    "per_agent_success": 0.9079999999999999,
+    "episode_length": 434.13,
+    "obstacle_collisions": 10.7
+  },
+  {
+    "update": 80,
+    "reward": 5902.5316138301705,
+    "all_success": 0.58,
+    "per_agent_success": 0.8959999999999999,
+    "episode_length": 504.34,
+    "obstacle_collisions": 12.96
+  },
+  {
+    "update": 90,
+    "reward": 5978.795178171192,
+    "all_success": 0.48,
+    "per_agent_success": 0.8599999999999999,
+    "episode_length": 543.44,
+    "obstacle_collisions": 13.16
+  },
+  {
+    "update": 100,
+    "reward": 6053.551369608895,
+    "all_success": 0.36,
+    "per_agent_success": 0.8219999999999998,
+    "episode_length": 633.28,
+    "obstacle_collisions": 10.53
+  },
+  {
+    "update": 110,
+    "reward": 6080.015541802415,
+    "all_success": 0.41,
+    "per_agent_success": 0.84,
+    "episode_length": 605.87,
+    "obstacle_collisions": 5.23
+  },
+  {
+    "update": 120,
+    "reward": 6097.175609535712,
+    "all_success": 0.73,
+    "per_agent_success": 0.9299999999999998,
+    "episode_length": 453.37,
+    "obstacle_collisions": 4.63
+  },
+  {
+    "update": 130,
+    "reward": 6150.262077145349,
+    "all_success": 0.84,
+    "per_agent_success": 0.95,
+    "episode_length": 345.44,
+    "obstacle_collisions": 2.88
+  },
+  {
+    "update": 140,
+    "reward": 6123.954777366303,
+    "all_success": 0.91,
+    "per_agent_success": 0.9739999999999999,
+    "episode_length": 293.19,
+    "obstacle_collisions": 4.67
+  },
+  {
+    "update": 150,
+    "reward": 6133.995945184626,
+    "all_success": 0.97,
+    "per_agent_success": 0.9940000000000001,
+    "episode_length": 239.8,
+    "obstacle_collisions": 1.7
+  },
+  {
+    "update": 160,
+    "reward": 6101.001446041478,
+    "all_success": 0.97,
+    "per_agent_success": 0.99,
+    "episode_length": 230.61,
+    "obstacle_collisions": 1.74
+  },
+  {
+    "update": 170,
+    "reward": 6086.875152049594,
+    "all_success": 0.97,
+    "per_agent_success": 0.9940000000000001,
+    "episode_length": 228.6,
+    "obstacle_collisions": 1.9
+  },
+  {
+    "update": 180,
+    "reward": 6110.1415093182695,
+    "all_success": 0.91,
+    "per_agent_success": 0.9739999999999999,
+    "episode_length": 269.34,
+    "obstacle_collisions": 2.62
+  },
+  {
+    "update": 190,
+    "reward": 6093.58068251649,
+    "all_success": 0.84,
+    "per_agent_success": 0.9520000000000001,
+    "episode_length": 325.65,
+    "obstacle_collisions": 3.57
+  },
+  {
+    "update": 200,
+    "reward": 6196.195128761469,
+    "all_success": 0.93,
+    "per_agent_success": 0.98,
+    "episode_length": 291.02,
+    "obstacle_collisions": 1.87
+  },
+  {
+    "update": 210,
+    "reward": 6200.224645267319,
+    "all_success": 0.95,
+    "per_agent_success": 0.99,
+    "episode_length": 263.55,
+    "obstacle_collisions": 1.94
+  },
+  {
+    "update": 220,
+    "reward": 6172.04065568008,
+    "all_success": 0.92,
+    "per_agent_success": 0.978,
+    "episode_length": 278.77,
+    "obstacle_collisions": 1.9
+  },
+  {
+    "update": 230,
+    "reward": 6220.255867344959,
+    "all_success": 0.97,
+    "per_agent_success": 0.9939999999999999,
+    "episode_length": 247.57,
+    "obstacle_collisions": 1.0
+  },
+  {
+    "update": 240,
+    "reward": 6207.7155961069175,
+    "all_success": 0.94,
+    "per_agent_success": 0.988,
+    "episode_length": 255.49,
+    "obstacle_collisions": 1.3
+  }
+]

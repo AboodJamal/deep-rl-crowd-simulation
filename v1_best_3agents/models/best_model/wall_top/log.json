@@ -1,0 +1,154 @@
+[
+  {
+    "update": 10,
+    "reward": -4852.774465567159,
+    "all_success": 0.0,
+    "per_agent": 0.3533333333333333,
+    "length": 800.0,
+    "obs_coll": 877.0
+  },
+  {
+    "update": 20,
+    "reward": -3313.9416992405377,
+    "all_success": 0.0,
+    "per_agent": 0.39333333333333337,
+    "length": 800.0,
+    "obs_coll": 698.5
+  },
+  {
+    "update": 30,
+    "reward": -334.3289620020395,
+    "all_success": 0.0,
+    "per_agent": 0.5033333333333333,
+    "length": 800.0,
+    "obs_coll": 403.19
+  },
+  {
+    "update": 40,
+    "reward": 2115.912455666785,
+    "all_success": 0.02,
+    "per_agent": 0.6033333333333332,
+    "length": 791.3,
+    "obs_coll": 186.61
+  },
+  {
+    "update": 50,
+    "reward": 3221.172413073661,
+    "all_success": 0.05,
+    "per_agent": 0.6333333333333333,
+    "length": 779.53,
+    "obs_coll": 76.56
+  },
+  {
+    "update": 60,
+    "reward": 4035.3011904439527,
+    "all_success": 0.26,
+    "per_agent": 0.72,
+    "length": 673.24,
+    "obs_coll": 28.55
+  },
+  {
+    "update": 70,
+    "reward": 4777.537352737137,
+    "all_success": 0.72,
+    "per_agent": 0.8966666666666667,
+    "length": 430.32,
+    "obs_coll": 7.13
+  },
+  {
+    "update": 80,
+    "reward": 4883.95433798362,
+    "all_success": 0.92,
+    "per_agent": 0.97,
+    "length": 301.37,
+    "obs_coll": 3.12
+  },
+  {
+    "update": 90,
+    "reward": 4795.195437477793,
+    "all_success": 0.94,
+    "per_agent": 0.98,
+    "length": 265.05,
+    "obs_coll": 1.02
+  },
+  {
+    "update": 100,
+    "reward": 4776.86118440665,
+    "all_success": 0.98,
+    "per_agent": 0.9933333333333334,
+    "length": 235.68,
+    "obs_coll": 0.72
+  },
+  {
+    "update": 110,
+    "reward": 4774.717245366217,
+    "all_success": 0.96,
+    "per_agent": 0.9866666666666666,
+    "length": 250.36,
+    "obs_coll": 1.24
+  },
+  {
+    "update": 120,
+    "reward": 4825.062273383817,
+    "all_success": 0.97,
+    "per_agent": 0.99,
+    "length": 239.96,
+    "obs_coll": 0.17
+  },
+  {
+    "update": 130,
+    "reward": 4806.546162956391,
+    "all_success": 0.95,
+    "per_agent": 0.9833333333333333,
+    "length": 246.38,
+    "obs_coll": 0.08
+  },
+  {
+    "update": 140,
+    "reward": 4840.52066857609,
+    "all_success": 0.97,
+    "per_agent": 0.99,
+    "length": 245.02,
+    "obs_coll": 0.12
+  },
+  {
+    "update": 150,
+    "reward": 4870.385045841822,
+    "all_success": 0.94,
+    "per_agent": 0.98,
+    "length": 264.79,
+    "obs_coll": 0.13
+  },
+  {
+    "update": 160,
+    "reward": 4910.092487077385,
+    "all_success": 0.99,
+    "per_agent": 0.9966666666666666,
+    "length": 246.43,
+    "obs_coll": 0.09
+  },
+  {
+    "update": 170,
+    "reward": 4952.452071944342,
+    "all_success": 1.0,
+    "per_agent": 1.0,
+    "length": 248.73,
+    "obs_coll": 0.06
+  },
+  {
+    "update": 180,
+    "reward": 4983.103448853086,
+    "all_success": 0.96,
+    "per_agent": 0.9866666666666666,
+    "length": 279.45,
+    "obs_coll": 0.13
+  },
+  {
+    "update": 190,
+    "reward": 5098.770916061329,
+    "all_success": 0.89,
+    "per_agent": 0.9633333333333334,
+    "length": 353.37,
+    "obs_coll": 0.41
+  }
+]

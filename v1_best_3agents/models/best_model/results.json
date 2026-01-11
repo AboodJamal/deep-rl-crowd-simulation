@@ -1,0 +1,9 @@
+{
+  "straight": 1.0,
+  "wall_bottom": 1.0,
+  "wall_top": 1.0,
+  "s_curve": 0.99,
+  "narrow": 1.0,
+  "chicane": 0.95,
+  "mixed": 0.85
+}

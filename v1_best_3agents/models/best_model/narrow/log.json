@@ -1,0 +1,234 @@
+[
+  {
+    "update": 10,
+    "reward": 4983.013578267382,
+    "all_success": 1.0,
+    "per_agent": 1.0,
+    "length": 223.44,
+    "obs_coll": 0.9
+  },
+  {
+    "update": 20,
+    "reward": 5045.512442803025,
+    "all_success": 0.99,
+    "per_agent": 0.9966666666666666,
+    "length": 234.01,
+    "obs_coll": 0.38
+  },
+  {
+    "update": 30,
+    "reward": 4976.8926716579035,
+    "all_success": 0.99,
+    "per_agent": 0.9966666666666667,
+    "length": 230.33,
+    "obs_coll": 0.52
+  },
+  {
+    "update": 40,
+    "reward": 5015.931060724073,
+    "all_success": 1.0,
+    "per_agent": 1.0,
+    "length": 233.95,
+    "obs_coll": 0.43
+  },
+  {
+    "update": 50,
+    "reward": 4976.480969044021,
+    "all_success": 0.99,
+    "per_agent": 0.9966666666666666,
+    "length": 243.39,
+    "obs_coll": 5.26
+  },
+  {
+    "update": 60,
+    "reward": 4873.660757337478,
+    "all_success": 0.97,
+    "per_agent": 0.99,
+    "length": 253.36,
+    "obs_coll": 8.22
+  },
+  {
+    "update": 70,
+    "reward": 4957.850383124051,
+    "all_success": 0.99,
+    "per_agent": 0.9966666666666666,
+    "length": 248.12,
+    "obs_coll": 2.61
+  },
+  {
+    "update": 80,
+    "reward": 4905.255499975182,
+    "all_success": 0.96,
+    "per_agent": 0.9833333333333334,
+    "length": 265.28,
+    "obs_coll": 5.74
+  },
+  {
+    "update": 90,
+    "reward": 4996.581879506907,
+    "all_success": 1.0,
+    "per_agent": 1.0,
+    "length": 237.85,
+    "obs_coll": 0.24
+  },
+  {
+    "update": 100,
+    "reward": 5032.209978054257,
+    "all_success": 0.99,
+    "per_agent": 0.9966666666666667,
+    "length": 264.03,
+    "obs_coll": 0.8
+  },
+  {
+    "update": 110,
+    "reward": 5080.082426549012,
+    "all_success": 0.97,
+    "per_agent": 0.99,
+    "length": 286.81,
+    "obs_coll": 4.98
+  },
+  {
+    "update": 120,
+    "reward": 5124.8224889258445,
+    "all_success": 0.98,
+    "per_agent": 0.9933333333333333,
+    "length": 280.14,
+    "obs_coll": 0.22
+  },
+  {
+    "update": 130,
+    "reward": 5186.4851773031205,
+    "all_success": 0.95,
+    "per_agent": 0.9833333333333333,
+    "length": 304.12,
+    "obs_coll": 0.26
+  },
+  {
+    "update": 140,
+    "reward": 5170.4023069415025,
+    "all_success": 0.98,
+    "per_agent": 0.9933333333333333,
+    "length": 284.02,
+    "obs_coll": 0.25
+  },
+  {
+    "update": 150,
+    "reward": 5135.859255045918,
+    "all_success": 0.97,
+    "per_agent": 0.99,
+    "length": 274.56,
+    "obs_coll": 0.22
+  },
+  {
+    "update": 160,
+    "reward": 5075.727727759722,
+    "all_success": 0.99,
+    "per_agent": 0.9966666666666666,
+    "length": 262.28,
+    "obs_coll": 0.3
+  },
+  {
+    "update": 170,
+    "reward": 4988.822785212392,
+    "all_success": 0.99,
+    "per_agent": 0.9966666666666667,
+    "length": 239.78,
+    "obs_coll": 0.38
+  },
+  {
+    "update": 180,
+    "reward": 5184.973686121889,
+    "all_success": 0.94,
+    "per_agent": 0.98,
+    "length": 311.11,
+    "obs_coll": 1.4
+  },
+  {
+    "update": 190,
+    "reward": 5010.461392701493,
+    "all_success": 0.96,
+    "per_agent": 0.9833333333333333,
+    "length": 279.33,
+    "obs_coll": 5.39
+  },
+  {
+    "update": 200,
+    "reward": 5149.437470038372,
+    "all_success": 0.91,
+    "per_agent": 0.97,
+    "length": 306.5,
+    "obs_coll": 0.36
+  },
+  {
+    "update": 210,
+    "reward": 5237.731690920174,
+    "all_success": 0.93,
+    "per_agent": 0.9766666666666666,
+    "length": 321.57,
+    "obs_coll": 0.21
+  },
+  {
+    "update": 220,
+    "reward": 5122.189054658892,
+    "all_success": 0.95,
+    "per_agent": 0.9833333333333333,
+    "length": 284.17,
+    "obs_coll": 0.11
+  },
+  {
+    "update": 230,
+    "reward": 5208.046074806352,
+    "all_success": 0.93,
+    "per_agent": 0.9766666666666666,
+    "length": 316.44,
+    "obs_coll": 0.16
+  },
+  {
+    "update": 240,
+    "reward": 5336.052249553068,
+    "all_success": 0.86,
+    "per_agent": 0.9533333333333335,
+    "length": 373.55,
+    "obs_coll": 0.27
+  },
+  {
+    "update": 250,
+    "reward": 5340.5888183404,
+    "all_success": 0.82,
+    "per_agent": 0.9400000000000002,
+    "length": 385.37,
+    "obs_coll": 0.13
+  },
+  {
+    "update": 260,
+    "reward": 5495.008353841023,
+    "all_success": 0.83,
+    "per_agent": 0.9433333333333335,
+    "length": 411.79,
+    "obs_coll": 0.23
+  },
+  {
+    "update": 270,
+    "reward": 5408.523662198513,
+    "all_success": 0.85,
+    "per_agent": 0.95,
+    "length": 382.6,
+    "obs_coll": 0.61
+  },
+  {
+    "update": 280,
+    "reward": 5373.300925065199,
+    "all_success": 0.87,
+    "per_agent": 0.9566666666666667,
+    "length": 378.84,
+    "obs_coll": 0.28
+  },
+  {
+    "update": 290,
+    "reward": 5412.729263905071,
+    "all_success": 0.87,
+    "per_agent": 0.9566666666666666,
+    "length": 381.87,
+    "obs_coll": 0.19
+  }
+]

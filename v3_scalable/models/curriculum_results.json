@@ -1,0 +1,38 @@
+{
+  "straight": {
+    "final_all_success": 1.0,
+    "final_per_agent": 1.0,
+    "best_all_success": 1.0,
+    "best_per_agent": 1.0
+  },
+  "curves": {
+    "final_all_success": 0.94,
+    "final_per_agent": 0.9860000000000001,
+    "best_all_success": 0.97,
+    "best_per_agent": 0.9940000000000001
+  },
+  "single_wall": {
+    "final_all_success": 0.9,
+    "final_per_agent": 0.9680000000000001,
+    "best_all_success": 0.92,
+    "best_per_agent": 0.98
+  },
+  "narrow_passage": {
+    "final_all_success": 0.96,
+    "final_per_agent": 0.992,
+    "best_all_success": 1.0,
+    "best_per_agent": 1.0
+  },
+  "double_wall": {
+    "final_all_success": 0.95,
+    "final_per_agent": 0.99,
+    "best_all_success": 1.0,
+    "best_per_agent": 1.0
+  },
+  "mixed": {
+    "final_all_success": 0.67,
+    "final_per_agent": 0.866,
+    "best_all_success": 0.88,
+    "best_per_agent": 0.9740000000000001
+  }
+}

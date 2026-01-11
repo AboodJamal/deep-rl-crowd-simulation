@@ -1,0 +1,56 @@
+{
+  "model_path": "models_simple_robust_20251207_145134/mixed/final_model.pt",
+  "num_agents": 3,
+  "num_episodes": 50,
+  "results": {
+    "straight": {
+      "all_success_rate": 1.0,
+      "any_success_rate": 1.0,
+      "per_agent_success": 1.0,
+      "avg_episode_length": 196.78,
+      "avg_collisions": 0.0
+    },
+    "single_wall_bottom": {
+      "all_success_rate": 0.96,
+      "any_success_rate": 1.0,
+      "per_agent_success": 0.9866666666666667,
+      "avg_episode_length": 238.86,
+      "avg_collisions": 4.26
+    },
+    "single_wall_top": {
+      "all_success_rate": 1.0,
+      "any_success_rate": 1.0,
+      "per_agent_success": 1.0,
+      "avg_episode_length": 208.58,
+      "avg_collisions": 0.58
+    },
+    "s_curve": {
+      "all_success_rate": 1.0,
+      "any_success_rate": 1.0,
+      "per_agent_success": 1.0,
+      "avg_episode_length": 210.6,
+      "avg_collisions": 1.38
+    },
+    "narrow_passage": {
+      "all_success_rate": 1.0,
+      "any_success_rate": 1.0,
+      "per_agent_success": 1.0,
+      "avg_episode_length": 198.38,
+      "avg_collisions": 0.04
+    },
+    "chicane": {
+      "all_success_rate": 0.96,
+      "any_success_rate": 1.0,
+      "per_agent_success": 0.9866666666666667,
+      "avg_episode_length": 263.16,
+      "avg_collisions": 9.76
+    },
+    "mixed": {
+      "all_success_rate": 0.98,
+      "any_success_rate": 1.0,
+      "per_agent_success": 0.9933333333333333,
+      "avg_episode_length": 241.94,
+      "avg_collisions": 2.84
+    }
+  }
+}
