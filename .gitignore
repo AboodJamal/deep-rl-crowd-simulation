@@ -1,4 +1,10 @@
+# ============================================
+# DRL vs VGA Comparison Project - .gitignore
+# ============================================
+
+# ==================
 # Python
+# ==================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -8,59 +14,79 @@ __pycache__/
 dist/
 build/
 
+# ==================
 # Virtual Environments
+# ==================
+.venv/
 venv/
 venv_*/
 env/
 ENV/
 
+# ==================
 # Jupyter Notebooks
-.ipynb_checkpoints
+# ==================
+.ipynb_checkpoints/
 
+# ==================
 # IDEs
+# ==================
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS
+# ==================
+# OS Files
+# ==================
 .DS_Store
 Thumbs.db
+nul
 
-# Weights & Biases
+# ==================
+# Weights & Biases (Large logs)
+# ==================
 wandb/
 
-# Training outputs
-runs/
-checkpoints/*.zip
-checkpoints/*.pkl
-
-# Keep model directories but ignore large files
-models/*.zip
-models/*.pkl
-
-# Evaluation results (keep structure, ignore videos)
-eval_*/**.mp4
-eval_*/**.avi
-
-# Logs
+# ==================
+# Training Logs (Keep structure, ignore heavy files)
+# ==================
+logs/
 *.log
 curriculum_logs/*.json
 
+# ==================
 # Temporary files
+# ==================
 *.tmp
 *.bak
 *.orig
 
-# PyTorch
-*.pt
-*.pth
+# ==================
+# ARCHIVE FOLDERS (Old/unused code)
+# ==================
+archive_comparisons/
+archive_old_dynamic/
+drl_vga_experiments/archive_old_dynamic/
+drl_vga_experiments/archive_v2_experiments/
+vga_upl_baseline/archive/
+vga_upl_baseline/archive.rar
 
-# Keep important files
-!models/README.md
-!checkpoints/README.md
-!eval_2m/complete_results.json
+# ==================
 # Large result files (>100MB)
+# ==================
 vga_upl_baseline/results/vga_comparison_experiment/comprehensive_results.json
 vga_upl_baseline/results/vga_comparison_experiment_with_drl/comprehensive_results.json
-vga_upl_baseline/archive/
+
+# ==================
+# Keep these important files (override above rules)
+# ==================
+# Models - KEEP ALL (essential for reproduction)
+!drl_vga_experiments/models/*.zip
+!drl_vga_experiments/models/*.pkl
+!drl_vga_experiments/models/training_summary.json
+
+# Results - KEEP JSON results
+!**/comparison_results.json
+!**/evaluation_results.json
+!**/*_summary.json
