@@ -1,0 +1,99 @@
+{
+  "timestamp": "2025-12-31T02:32:17.782954",
+  "n_trials": 5,
+  "collision_causes_failure": true,
+  "drl": {
+    "success_rate": 80.0,
+    "avg_collisions": 0.2,
+    "avg_steps_success": 79.25,
+    "trials": [
+      {
+        "trial": 1,
+        "success": false,
+        "steps": 58,
+        "collisions": 1,
+        "collision_step": 57,
+        "failure_reason": "collision"
+      },
+      {
+        "trial": 2,
+        "success": true,
+        "steps": 75,
+        "collisions": 0,
+        "collision_step": null,
+        "failure_reason": null
+      },
+      {
+        "trial": 3,
+        "success": true,
+        "steps": 80,
+        "collisions": 0,
+        "collision_step": null,
+        "failure_reason": null
+      },
+      {
+        "trial": 4,
+        "success": true,
+        "steps": 84,
+        "collisions": 0,
+        "collision_step": null,
+        "failure_reason": null
+      },
+      {
+        "trial": 5,
+        "success": true,
+        "steps": 78,
+        "collisions": 0,
+        "collision_step": null,
+        "failure_reason": null
+      }
+    ]
+  },
+  "vgaupl": {
+    "success_rate": 20.0,
+    "avg_collisions": 0.8,
+    "avg_steps_success": 72.0,
+    "trials": [
+      {
+        "trial": 1,
+        "success": false,
+        "steps": 56,
+        "collisions": 1,
+        "collision_step": 56,
+        "failure_reason": "collision"
+      },
+      {
+        "trial": 2,
+        "success": true,
+        "steps": 72,
+        "collisions": 0,
+        "collision_step": null,
+        "failure_reason": null
+      },
+      {
+        "trial": 3,
+        "success": false,
+        "steps": 56,
+        "collisions": 1,
+        "collision_step": 56,
+        "failure_reason": "collision"
+      },
+      {
+        "trial": 4,
+        "success": false,
+        "steps": 20,
+        "collisions": 1,
+        "collision_step": 20,
+        "failure_reason": "collision"
+      },
+      {
+        "trial": 5,
+        "success": false,
+        "steps": 37,
+        "collisions": 1,
+        "collision_step": 37,
+        "failure_reason": "collision"
+      }
+    ]
+  }
+}
