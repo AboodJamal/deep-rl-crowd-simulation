@@ -1,0 +1,122 @@
+{
+  "MOSP_A": {
+    "exp_no": 184,
+    "row": 183,
+    "start_pos": [
+      0.0315104070504546,
+      0.065828696680538
+    ],
+    "goal_pos": [
+      9.99002991026919,
+      -0.0421741298871701
+    ],
+    "num_obstacles": 4,
+    "vga_clusters": {
+      "0": {
+        "count": 56,
+        "percentage": 56.00000000000001
+      },
+      "1": {
+        "count": 44,
+        "percentage": 44.0
+      }
+    },
+    "drl_clusters": {
+      "0": {
+        "count": 100,
+        "percentage": 100.0
+      }
+    }
+  },
+  "MOSP_B": {
+    "exp_no": 24,
+    "row": 23,
+    "start_pos": [
+      0.110930735930737,
+      0.0499901113340922
+    ],
+    "goal_pos": [
+      9.93006993006993,
+      -1.74928931402363
+    ],
+    "num_obstacles": 7,
+    "vga_clusters": {
+      "0": {
+        "count": 100,
+        "percentage": 100.0
+      }
+    },
+    "drl_clusters": {
+      "0": {
+        "count": 79,
+        "percentage": 79.0
+      },
+      "1": {
+        "count": 21,
+        "percentage": 21.0
+      }
+    }
+  },
+  "MOSP_C": {
+    "exp_no": 154,
+    "row": 153,
+    "start_pos": [
+      0.125981308411216,
+      -0.0212329472238805
+    ],
+    "goal_pos": [
+      9.92272727272727,
+      -1.62245082788802
+    ],
+    "num_obstacles": 12,
+    "vga_clusters": {
+      "0": {
+        "count": 52,
+        "percentage": 52.0
+      },
+      "1": {
+        "count": 48,
+        "percentage": 48.0
+      }
+    },
+    "drl_clusters": {
+      "0": {
+        "count": 98,
+        "percentage": 98.0
+      },
+      "1": {
+        "count": 1,
+        "percentage": 1.0
+      },
+      "2": {
+        "count": 1,
+        "percentage": 1.0
+      }
+    }
+  },
+  "MOSP_D": {
+    "exp_no": 161,
+    "row": 160,
+    "start_pos": [
+      0.0216190476190485,
+      0.0041792251930244
+    ],
+    "goal_pos": [
+      9.98541401273885,
+      1.62879758482528
+    ],
+    "num_obstacles": 16,
+    "vga_clusters": {
+      "0": {
+        "count": 100,
+        "percentage": 100.0
+      }
+    },
+    "drl_clusters": {
+      "0": {
+        "count": 100,
+        "percentage": 100.0
+      }
+    }
+  }
+}
