@@ -1,0 +1,69 @@
+================================================================================
+STATISTICAL ANALYSIS SUMMARY
+VGA+UPL V4 vs DRL (PPO) Comparison
+================================================================================
+
+1. SUCCESS RATES:
+   SOSP      : VGA=100.0%  DRL=100.0%
+   MOSP_A    : VGA=100.0%  DRL=100.0%
+   MOSP_B    : VGA=100.0%  DRL=100.0%
+   MOSP_C    : VGA=100.0%  DRL=100.0%
+   MOSP_D    : VGA=100.0%  DRL=100.0%
+
+2. SPL (SUCCESS WEIGHTED PATH LENGTH):
+   SOSP      : VGA=1.000±0.000  DRL=0.981±0.001
+   MOSP_A    : VGA=1.000±0.000  DRL=0.975±0.015
+   MOSP_B    : VGA=1.000±0.000  DRL=0.940±0.048
+   MOSP_C    : VGA=0.976±0.017  DRL=0.936±0.005
+   MOSP_D    : VGA=0.973±0.029  DRL=0.937±0.012
+
+3. STATISTICAL SIGNIFICANCE (p < 0.05):
+
+   Path Efficiency:
+      SOSP      : p=0.0000 [SIGNIFICANT] Winner: VGA (d=53.98)
+      MOSP_A    : p=0.0438 [SIGNIFICANT] Winner: VGA (d=3.52)
+      MOSP_B    : p=0.1929 [Not significant] Winner: VGA (d=1.92)
+      MOSP_C    : p=0.0533 [Not significant] Winner: VGA (d=3.03)
+      MOSP_D    : p=0.2140 [Not significant] Winner: VGA (d=1.61)
+
+   Travel Time:
+      SOSP      : p=0.0229 [SIGNIFICANT] Winner: DRL (d=2.91)
+      MOSP_A    : p=0.0472 [SIGNIFICANT] Winner: DRL (d=1.67)
+      MOSP_B    : p=0.8609 [Not significant] Winner: VGA (d=-0.15)
+      MOSP_C    : p=0.1917 [Not significant] Winner: DRL (d=0.97)
+      MOSP_D    : p=0.1732 [Not significant] Winner: DRL (d=1.87)
+
+   Average Speed:
+      SOSP      : p=0.0192 [SIGNIFICANT] Winner: VGA (d=2.92)
+      MOSP_A    : p=0.0523 [Not significant] Winner: VGA (d=1.67)
+      MOSP_B    : p=0.3717 [Not significant] Winner: VGA (d=1.18)
+      MOSP_C    : p=0.1970 [Not significant] Winner: VGA (d=0.97)
+      MOSP_D    : p=0.1632 [Not significant] Winner: VGA (d=1.93)
+
+   Collisions:
+      SOSP      : p=nan [Not significant] Winner: DRL (d=0.00)
+      MOSP_A    : p=nan [Not significant] Winner: DRL (d=0.00)
+      MOSP_B    : p=nan [Not significant] Winner: DRL (d=0.00)
+      MOSP_C    : p=nan [Not significant] Winner: DRL (d=0.00)
+      MOSP_D    : p=nan [Not significant] Winner: DRL (d=0.00)
+
+   Oscillation:
+      SOSP      : p=0.0007 [SIGNIFICANT] Winner: VGA (d=-36.50)
+      MOSP_A    : p=0.0095 [SIGNIFICANT] Winner: VGA (d=-4.92)
+      MOSP_B    : p=0.0465 [SIGNIFICANT] Winner: VGA (d=-5.99)
+      MOSP_C    : p=0.0173 [SIGNIFICANT] Winner: VGA (d=-3.78)
+      MOSP_D    : p=0.0023 [SIGNIFICANT] Winner: VGA (d=-1.74)
+
+   Min Clearance:
+      SOSP      : p=0.0197 [SIGNIFICANT] Winner: DRL (d=-7.10)
+      MOSP_A    : p=0.4803 [Not significant] Winner: VGA (d=0.83)
+      MOSP_B    : p=0.3623 [Not significant] Winner: DRL (d=-1.05)
+      MOSP_C    : p=0.0840 [Not significant] Winner: VGA (d=2.10)
+      MOSP_D    : p=0.5270 [Not significant] Winner: VGA (d=0.58)
+
+================================================================================
+INTERPRETATION GUIDE:
+- p < 0.05: Statistically significant difference
+- Cohen's d: Effect size (0.2=small, 0.5=medium, 0.8=large)
+- SPL: Combines success rate with path optimality
+================================================================================
