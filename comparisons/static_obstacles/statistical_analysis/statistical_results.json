@@ -1,0 +1,445 @@
+{
+  "scenarios": {
+    "SOSP": {
+      "path_efficiency": {
+        "vga_mean": 1.0180757248053254,
+        "vga_std": 0.003274596004129472,
+        "drl_mean": 0.9768856895408959,
+        "drl_std": 0.0044626727336167646,
+        "t_statistic": 32.436630423015025,
+        "p_value": 2.6318885728530026e-29,
+        "cohens_d": 10.523832567829649,
+        "significant": true
+      },
+      "travel_time": {
+        "vga_mean": 6.145000000000001,
+        "vga_std": 0.18967076738390648,
+        "drl_mean": 5.915000000000001,
+        "drl_std": 0.15256146302392343,
+        "t_statistic": 4.1187028395077085,
+        "p_value": 0.00019824358930811882,
+        "cohens_d": 1.3362836556804951,
+        "significant": true
+      },
+      "average_speed": {
+        "vga_mean": 1.5869677137995,
+        "vga_std": 0.00043998277744509707,
+        "drl_mean": 1.586465238624043,
+        "drl_std": 0.0003820369715917666,
+        "t_statistic": 3.7587877129917278,
+        "p_value": 0.0005735524866541776,
+        "cohens_d": 1.2195117690607338,
+        "significant": true
+      },
+      "num_collisions": {
+        "vga_mean": 0.0,
+        "vga_std": 0.0,
+        "drl_mean": 0.0,
+        "drl_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "cohens_d": 0.0,
+        "significant": false
+      },
+      "oscillation_index": {
+        "vga_mean": 2.409054794742846,
+        "vga_std": 1.4540533066181258,
+        "drl_mean": 10.199330525331783,
+        "drl_std": 1.0265657360713576,
+        "t_statistic": -19.077858580939626,
+        "p_value": 4.633906078891425e-21,
+        "cohens_d": -6.189674662263478,
+        "significant": true
+      },
+      "min_clearance": {
+        "vga_mean": 0.2741933781868688,
+        "vga_std": 0.0024690872516399003,
+        "drl_mean": 0.3425024381976737,
+        "drl_std": 0.05337477313569845,
+        "t_statistic": -5.572561662002778,
+        "p_value": 2.1961293670418014e-06,
+        "cohens_d": -1.807977744297789,
+        "significant": true
+      },
+      "path_length": {
+        "vga_mean": 9.672,
+        "vga_std": 0.3034732278142504,
+        "drl_mean": 9.648827524617221,
+        "drl_std": 0.23521164653411833,
+        "t_statistic": 0.26306935653599517,
+        "p_value": 0.7939183004098291,
+        "cohens_d": 0.08535096974644879,
+        "significant": false
+      },
+      "average_jerk": {
+        "vga_mean": 7.946472934796992,
+        "vga_std": 0.4372677858398699,
+        "drl_mean": 77.4688388068125,
+        "drl_std": 6.414793135244842,
+        "t_statistic": -47.13158458915932,
+        "p_value": 2.5278900459637674e-35,
+        "cohens_d": -15.291505264396342,
+        "significant": true
+      },
+      "spl": {
+        "vga_mean": 1.0,
+        "vga_std": 0.0,
+        "drl_mean": 0.9768856895408959,
+        "drl_std": 0.0044626727336167646
+      }
+    },
+    "MOSP_A": {
+      "path_efficiency": {
+        "vga_mean": 1.01492405798059,
+        "vga_std": 0.005474212732506914,
+        "drl_mean": 0.9592529058934695,
+        "drl_std": 0.04349947670239741,
+        "t_statistic": 5.534914862358526,
+        "p_value": 2.4731127839865642e-06,
+        "cohens_d": 1.795763509619158,
+        "significant": true
+      },
+      "travel_time": {
+        "vga_mean": 6.334999999999999,
+        "vga_std": 0.12459935794377115,
+        "drl_mean": 6.2075000000000005,
+        "drl_std": 0.39473883771425394,
+        "t_statistic": 1.342619193766815,
+        "p_value": 0.1873611525756015,
+        "cohens_d": 0.4356031873005828,
+        "significant": false
+      },
+      "average_speed": {
+        "vga_mean": 1.587366878750814,
+        "vga_std": 0.00024743037765623233,
+        "drl_mean": 1.585819126255214,
+        "drl_std": 0.004843012413229581,
+        "t_statistic": 1.3912227489107771,
+        "p_value": 0.17225017159074893,
+        "cohens_d": 0.4513722628755045,
+        "significant": false
+      },
+      "num_collisions": {
+        "vga_mean": 0.0,
+        "vga_std": 0.0,
+        "drl_mean": 0.0,
+        "drl_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "cohens_d": 0.0,
+        "significant": false
+      },
+      "oscillation_index": {
+        "vga_mean": 2.5088392858190156,
+        "vga_std": 1.6446752973621577,
+        "drl_mean": 13.218309984774155,
+        "drl_std": 4.591959185769305,
+        "t_statistic": -9.570575179149397,
+        "p_value": 1.1397346989420366e-11,
+        "cohens_d": -3.1051046132008353,
+        "significant": true
+      },
+      "min_clearance": {
+        "vga_mean": 0.3517044396969688,
+        "vga_std": 0.1752009258255181,
+        "drl_mean": 0.3093759933282487,
+        "drl_std": 0.054143599924455166,
+        "t_statistic": 1.0061569988806267,
+        "p_value": 0.32070428836250514,
+        "cohens_d": 0.3264404364781566,
+        "significant": false
+      },
+      "path_length": {
+        "vga_mean": 9.975999999999999,
+        "vga_std": 0.19935897271003727,
+        "drl_mean": 10.106355993408844,
+        "drl_std": 0.5979783734937093,
+        "t_statistic": -0.9014391665618114,
+        "p_value": 0.3730330277031916,
+        "cohens_d": -0.2924654853251744,
+        "significant": false
+      },
+      "average_jerk": {
+        "vga_mean": 12.139430936005223,
+        "vga_std": 7.311164319654221,
+        "drl_mean": 93.73976318901967,
+        "drl_std": 26.271431076971396,
+        "t_statistic": -13.043285538990212,
+        "p_value": 1.3128388468833727e-15,
+        "cohens_d": -4.231800632698633,
+        "significant": true
+      },
+      "spl": {
+        "vga_mean": 1.0,
+        "vga_std": 0.0,
+        "drl_mean": 0.9592529058934695,
+        "drl_std": 0.04349947670239741
+      }
+    },
+    "MOSP_B": {
+      "path_efficiency": {
+        "vga_mean": 1.0106147403984624,
+        "vga_std": 0.007040216314165821,
+        "drl_mean": 0.9603646913878015,
+        "drl_std": 0.01802448040334106,
+        "t_statistic": 11.319268960496503,
+        "p_value": 9.772535441220085e-14,
+        "cohens_d": 3.672455793866144,
+        "significant": true
+      },
+      "travel_time": {
+        "vga_mean": 6.295000000000001,
+        "vga_std": 0.1302881422079538,
+        "drl_mean": 6.215000000000001,
+        "drl_std": 0.18103866990231682,
+        "t_statistic": 1.5634004942840594,
+        "p_value": 0.12624913371558083,
+        "cohens_d": 0.5072340999585935,
+        "significant": false
+      },
+      "average_speed": {
+        "vga_mean": 1.5872860913938613,
+        "vga_std": 0.0002613916788604353,
+        "drl_mean": 1.5871170044676235,
+        "drl_std": 0.00037556957669719566,
+        "t_statistic": 1.6107242057152484,
+        "p_value": 0.11551650196962868,
+        "cohens_d": 0.5225879394016926,
+        "significant": false
+      },
+      "num_collisions": {
+        "vga_mean": 0.0,
+        "vga_std": 0.0,
+        "drl_mean": 0.0,
+        "drl_std": 0.0,
+        "t_statistic": null,
+        "p_value": null,
+        "cohens_d": 0.0,
+        "significant": false
+      },
+      "oscillation_index": {
+        "vga_mean": 2.5951218502642224,
+        "vga_std": 1.4672463057344654,
+        "drl_mean": 12.411700319047961,
+        "drl_std": 1.9869932497033924,
+        "t_statistic": -17.323596969405493,
+        "p_value": 1.2519146205258853e-19,
+        "cohens_d": -5.62051703894706,
+        "significant": true
+      },
+      "min_clearance": {
+        "vga_mean": 0.2771981780047267,
+        "vga_std": 0.012908248433099252,
+        "drl_mean": 0.2765962421154828,
+        "drl_std": 0.03084782563867015,
+        "t_statistic": 0.07846303716742146,
+        "p_value": 0.9378714561633145,
+        "cohens_d": 0.025456770791069904,
+        "significant": false
+      },
+      "path_length": {
+        "vga_mean": 9.912000000000003,
+        "vga_std": 0.20846102753272577,
+        "drl_mean": 10.123871792409883,
+        "drl_std": 0.2944025404216852,
+        "t_statistic": -2.5601365835457375,
+        "p_value": 0.01456219442002047,
+        "cohens_d": -0.8306179897432892,
+        "significant": true
+      },
+      "average_jerk": {
+        "vga_mean": 13.037482051836,
+        "vga_std": 2.819376752527102,
+        "drl_mean": 84.80102071368933,
+        "drl_std": 10.676841455352228,
+        "t_statistic": -28.327009798230332,
+        "p_value": 3.708413664121424e-27,
+        "cohens_d": -9.19049557170792,
+        "significant": true
+      },
+      "spl": {
+        "vga_mean": 1.0,
+        "vga_std": 0.0,
+        "drl_mean": 0.9603646913878015,
+        "drl_std": 0.01802448040334106
+      }
+    },
+    "MOSP_C": {
+      "path_efficiency": {
+        "vga_mean": 0.9816658401786608,
+        "vga_std": 0.018713783195580157,
+        "drl_mean": 0.930850238336064,
+        "drl_std": 0.035499008771491446,
+        "t_statistic": 5.519617394037573,
+        "p_value": 2.5953760991422494e-06,
+        "cohens_d": 1.7908003555177023,
+        "significant": true
+      },
+      "travel_time": {
+        "vga_mean": 6.5525,
+        "vga_std": 0.20339309231141572,
+        "drl_mean": 6.49,
+        "drl_std": 0.3284813541131369,
+        "t_statistic": 0.7051351591581476,
+        "p_value": 0.4850261603157833,
+        "cohens_d": 0.22877605521580222,
+        "significant": false
+      },
+      "average_speed": {
+        "vga_mean": 1.587779024823878,
+        "vga_std": 0.0003833205337174953,
+        "drl_mean": 1.5876429510434913,
+        "drl_std": 0.0006017772864875886,
+        "t_statistic": 0.8313085953560022,
+        "p_value": 0.4109926634468315,
+        "cohens_d": 0.2697121234737374,
+        "significant": false
+      },
+      "num_collisions": {
+        "vga_mean": 0.1,
+        "vga_std": 0.30000000000000004,
+        "drl_mean": 0.0,
+        "drl_std": 0.0,
+        "t_statistic": 1.4529663145135578,
+        "p_value": 0.15444172531879197,
+        "cohens_d": 0.4714045207910317,
+        "significant": false
+      },
+      "oscillation_index": {
+        "vga_mean": 5.7913057607305465,
+        "vga_std": 2.164067551527723,
+        "drl_mean": 14.484538810914131,
+        "drl_std": 2.063856148755815,
+        "t_statistic": -12.671383090333178,
+        "p_value": 3.2252517913038066e-15,
+        "cohens_d": -4.111139545212324,
+        "significant": true
+      },
+      "min_clearance": {
+        "vga_mean": 0.2499869809791638,
+        "vga_std": 0.041991984161720446,
+        "drl_mean": 0.23746083173187885,
+        "drl_std": 0.028763964234641767,
+        "t_statistic": 1.072720201166738,
+        "p_value": 0.29016206621878177,
+        "cohens_d": 0.3480363910178914,
+        "significant": false
+      },
+      "path_length": {
+        "vga_mean": 10.306927040264881,
+        "vga_std": 0.3082301811553506,
+        "drl_mean": 10.556545034702534,
+        "drl_std": 0.5181385042595409,
+        "t_statistic": -1.804747299494459,
+        "p_value": 0.07904364214275982,
+        "cohens_d": -0.5855373434117941,
+        "significant": false
+      },
+      "average_jerk": {
+        "vga_mean": 32.495144982266126,
+        "vga_std": 11.234499775723133,
+        "drl_mean": 74.31704725791549,
+        "drl_std": 14.661461581441941,
+        "t_statistic": -9.86946501784121,
+        "p_value": 4.912724177237913e-12,
+        "cohens_d": -3.202077281989096,
+        "significant": true
+      },
+      "spl": {
+        "vga_mean": 0.9799612634736711,
+        "vga_std": 0.0164240577927979,
+        "drl_mean": 0.930850238336064,
+        "drl_std": 0.035499008771491446
+      }
+    },
+    "MOSP_D": {
+      "path_efficiency": {
+        "vga_mean": 0.9811120035421073,
+        "vga_std": 0.024350047589504716,
+        "drl_mean": 0.9350643278523816,
+        "drl_std": 0.02924975896412945,
+        "t_statistic": 5.273868288744723,
+        "p_value": 5.627433329397959e-06,
+        "cohens_d": 1.711068817313263,
+        "significant": true
+      },
+      "travel_time": {
+        "vga_mean": 6.805,
+        "vga_std": 1.019055935658097,
+        "drl_mean": 6.362499999999999,
+        "drl_std": 0.21729875747458846,
+        "t_statistic": 1.851127815343603,
+        "p_value": 0.07193507744805071,
+        "cohens_d": 0.6005851697994461,
+        "significant": false
+      },
+      "average_speed": {
+        "vga_mean": 1.5880720567405215,
+        "vga_std": 0.001158320276469082,
+        "drl_mean": 1.5874122161457156,
+        "drl_std": 0.0004140958104150082,
+        "t_statistic": 2.3381391958317406,
+        "p_value": 0.02474413027985679,
+        "cohens_d": 0.7585925262987264,
+        "significant": true
+      },
+      "num_collisions": {
+        "vga_mean": 0.05,
+        "vga_std": 0.21794494717703364,
+        "drl_mean": 0.0,
+        "drl_std": 0.0,
+        "t_statistic": 1.0000000000000002,
+        "p_value": 0.323636083864408,
+        "cohens_d": 0.32444284226152514,
+        "significant": false
+      },
+      "oscillation_index": {
+        "vga_mean": 6.982835705504212,
+        "vga_std": 4.423572010508135,
+        "drl_mean": 14.389030506811348,
+        "drl_std": 3.9573696191096523,
+        "t_statistic": -5.439052245379847,
+        "p_value": 3.3458916523580995e-06,
+        "cohens_d": -1.7646615696999672,
+        "significant": true
+      },
+      "min_clearance": {
+        "vga_mean": 0.25056570246201404,
+        "vga_std": 0.032159205031178736,
+        "drl_mean": 0.23671951618713588,
+        "drl_std": 0.02825699197320188,
+        "t_statistic": 1.4098229972262928,
+        "p_value": 0.16672455085073626,
+        "cohens_d": 0.4574069803057606,
+        "significant": false
+      },
+      "path_length": {
+        "vga_mean": 10.35861566070891,
+        "vga_std": 0.32685930557168286,
+        "drl_mean": 10.359871963367556,
+        "drl_std": 0.3458337290233334,
+        "t_statistic": -0.011507909802942258,
+        "p_value": 0.9908784256619223,
+        "cohens_d": -0.0037336589649558534,
+        "significant": false
+      },
+      "average_jerk": {
+        "vga_mean": 40.32318114517815,
+        "vga_std": 27.12905818448574,
+        "drl_mean": 79.35523454676297,
+        "drl_std": 20.34770259834358,
+        "t_statistic": -5.017027542171617,
+        "p_value": 1.2588593603503947e-05,
+        "cohens_d": -1.6277386754865129,
+        "significant": true
+      },
+      "spl": {
+        "vga_mean": 0.97940175808658,
+        "vga_std": 0.02227674225200728,
+        "drl_mean": 0.9350643278523816,
+        "drl_std": 0.02924975896412945
+      }
+    }
+  },
+  "overall": {}
+}

@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Project Overview
+## Project Overview
 
 This project implements and compares two fundamentally different approaches to autonomous pedestrian navigation using the **VGA (Virtual Guidance Assistance) experimental dataset**:
 
@@ -17,12 +17,12 @@ This project implements and compares two fundamentally different approaches to a
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
-vga-navigation-comparison/
+project/
 │
-├── 📂 drl_vga_experiments/          # Deep Reinforcement Learning Agent
+├── drl_training/                   # Deep Reinforcement Learning Agent
 │   ├── train_vga_drl.py            # PPO curriculum training
 │   ├── evaluate_vga_drl.py         # Evaluation & visualization generator
 │   ├── vga_experimental_env.py     # Gymnasium environment
@@ -30,10 +30,9 @@ vga-navigation-comparison/
 │   │   ├── vga_drl_final.zip      # Final trained policy (98.9% success)
 │   │   └── vga_drl_stage6_vecnormalize.pkl  # CRITICAL normalization stats
 │   ├── evaluation_final/           # Full evaluation results
-│   ├── COMMANDS.txt               # All commands to run DRL
 │   └── README.md                  # DRL-specific documentation
 │
-├── 📂 vga_upl_baseline/            # VGA + UPL Physics-Based Algorithm
+├── vga_baseline/                   # VGA + UPL Physics-Based Algorithm
 │   ├── models/
 │   │   ├── vga_upl_planner_v4.py  # VGA algorithm (100% success)
 │   │   └── upl_physics.py         # Universal Power Law physics
@@ -43,11 +42,25 @@ vga-navigation-comparison/
 │   ├── results/
 │   │   ├── vga_v4_Det/            # Deterministic results (videos, images)
 │   │   └── vga_v4_Stochastic/     # Stochastic results (path distributions)
-│   ├── VGA_UPL_ALGORITHM.md       # DEEP algorithm documentation
-│   ├── COMMANDS.txt               # All commands to run VGA+UPL
+│   ├── VGA_UPL_ALGORITHM.md       # Algorithm documentation
 │   └── README.md                  # VGA+UPL documentation
 │
-├── 📂 core/                        # Shared Neural Network Architecture
+├── comparisons/                    # All comparison results
+│   ├── static_obstacles/          # DRL vs VGA static comparison
+│   ├── dynamic_obstacles/         # Dynamic obstacles comparison
+│   ├── narrow_passages/           # Narrow passage navigation
+│   ├── multiagent/                # Multi-agent scenarios
+│   └── real_experiment/           # Real experiment comparison
+│
+├── data/                          # VGA Experimental Dataset
+│   ├── VGA-Experimental-Data/     # Original dataset (941 trials)
+│   ├── DATASET_DOCUMENTATION.md   # Comprehensive dataset documentation
+│   └── scenario_visualizations/   # Obstacle layout visualizations
+│
+├── docs/                          # Presentation materials
+│   └── presentation_drl_vs_vga.md # Marp presentation slides
+│
+├── core/                          # Shared utilities
 │   ├── advanced_policy_network.py # Actor-Critic policy (for DRL)
 │   └── numpy_compat_fix.py        # NumPy compatibility
 │
@@ -57,7 +70,7 @@ vga-navigation-comparison/
 
 ---
 
-## 🎯 Experimental Scenarios
+## Experimental Scenarios
 
 Both methods are tested on identical VGA dataset scenarios:
 
@@ -75,7 +88,7 @@ Both methods are tested on identical VGA dataset scenarios:
 
 ---
 
-## 📊 Results Comparison
+## Results Comparison
 
 ### DRL Agent Performance
 
@@ -107,12 +120,12 @@ Overall Success Rate: 100% (941/941)
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Option 1: Run DRL Evaluation
 
 ```bash
-cd drl_vga_experiments/
+cd drl_training/
 
 # Evaluate pre-trained model (MUST include --vec-normalize)
 python evaluate_vga_drl.py \
@@ -124,7 +137,7 @@ python evaluate_vga_drl.py \
 ### Option 2: Run VGA+UPL
 
 ```bash
-cd vga_upl_baseline/
+cd vga_baseline/
 
 # Generate deterministic results (100% success)
 python scripts/generate_v4_visualizations.py
@@ -135,7 +148,7 @@ python scripts/generate_stochastic_visualizations.py
 
 ---
 
-## 🔬 Key Technical Differences
+## Key Technical Differences
 
 | Aspect | DRL Agent | VGA+UPL |
 |--------|-----------|---------|
@@ -148,19 +161,20 @@ python scripts/generate_stochastic_visualizations.py
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 | Document | Description |
 |----------|-------------|
-| [drl_vga_experiments/README.md](drl_vga_experiments/README.md) | DRL training & evaluation guide |
-| [drl_vga_experiments/COMMANDS.txt](drl_vga_experiments/COMMANDS.txt) | All DRL commands |
-| [vga_upl_baseline/README.md](vga_upl_baseline/README.md) | VGA+UPL usage guide |
-| [vga_upl_baseline/COMMANDS.txt](vga_upl_baseline/COMMANDS.txt) | All VGA+UPL commands |
-| [vga_upl_baseline/VGA_UPL_ALGORITHM.md](vga_upl_baseline/VGA_UPL_ALGORITHM.md) | **DEEP dive into VGA+UPL algorithm** |
+| [drl_training/README.md](drl_training/README.md) | DRL training & evaluation guide |
+| [vga_baseline/README.md](vga_baseline/README.md) | VGA+UPL usage guide |
+| [vga_baseline/VGA_UPL_ALGORITHM.md](vga_baseline/VGA_UPL_ALGORITHM.md) | Deep dive into VGA+UPL algorithm |
+| [data/DATASET_DOCUMENTATION.md](data/DATASET_DOCUMENTATION.md) | Comprehensive dataset documentation |
+| [comparisons/static_obstacles/](comparisons/static_obstacles/) | DRL vs VGA static comparison results |
+| [docs/presentation_drl_vs_vga.md](docs/presentation_drl_vs_vga.md) | Presentation slides (Marp format) |
 
 ---
 
-## 🔧 Installation
+## Installation
 
 ```bash
 # Clone or download the repository
@@ -178,7 +192,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📂 Dataset
+## Dataset
 
 VGA experimental data is included in the project:
 ```
@@ -194,7 +208,7 @@ This is the default location. You can also modify `data_root` parameter in scrip
 
 ---
 
-## 💻 Hardware Used
+## Hardware Used
 
 - **GPU:** NVIDIA RTX 3050 (4GB VRAM)
 - **CPU:** Multi-core processor
@@ -203,20 +217,20 @@ This is the default location. You can also modify `data_root` parameter in scrip
 
 ---
 
-## 📝 Key Findings
+## Key Findings
 
 ### DRL Strengths
-- ✅ Learns directly from data (no physics modeling)
-- ✅ Fast inference (real-time capable)
-- ✅ Generalizes across density levels
-- ✅ Can capture subtle behavioral patterns
+- Learns directly from data (no physics modeling)
+- Fast inference (real-time capable)
+- Generalizes across density levels
+- Can capture subtle behavioral patterns
 
 ### VGA+UPL Strengths
-- ✅ 100% success rate (higher than DRL)
-- ✅ Fully interpretable (geometric reasoning)
-- ✅ No training required
-- ✅ Consistent, reproducible results
-- ✅ Stochastic mode shows human-like path variety
+- 100% success rate (higher than DRL)
+- Fully interpretable (geometric reasoning)
+- No training required
+- Consistent, reproducible results
+- Stochastic mode shows human-like path variety
 
 ### Trade-offs
 - DRL requires significant training compute
@@ -226,7 +240,7 @@ This is the default location. You can also modify `data_root` parameter in scrip
 
 ---
 
-## 📧 Attribution
+## Attribution
 
 **VGA Experimental Dataset:**
 - Source: https://github.com/kanika201293/Pedestrian-Experimental-Data
@@ -234,6 +248,6 @@ This is the default location. You can also modify `data_root` parameter in scrip
 
 ---
 
-**Last Updated:** December 22, 2025  
-**Version:** 3.0  
-**Status:** ✅ Production Ready
+**Last Updated:** January 18, 2026  
+**Version:** 4.0  
+**Status:** Production Ready

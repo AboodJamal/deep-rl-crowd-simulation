@@ -44,16 +44,15 @@ Thumbs.db
 nul
 
 # ==================
-# Weights & Biases (Large logs)
+# Weights & Biases (Large training logs - regenerable)
 # ==================
 wandb/
 
 # ==================
-# Training Logs (Keep structure, ignore heavy files)
+# Training Logs (regenerable)
 # ==================
 logs/
 *.log
-curriculum_logs/*.json
 
 # ==================
 # Temporary files
@@ -63,30 +62,9 @@ curriculum_logs/*.json
 *.orig
 
 # ==================
-# ARCHIVE FOLDERS (Old/unused code)
+# Archive folders (old/unused experiments)
 # ==================
-archive_comparisons/
-archive_old_dynamic/
-drl_vga_experiments/archive_old_dynamic/
-drl_vga_experiments/archive_v2_experiments/
-vga_upl_baseline/archive/
-vga_upl_baseline/archive.rar
-
-# ==================
-# Large result files (>100MB)
-# ==================
-vga_upl_baseline/results/vga_comparison_experiment/comprehensive_results.json
-vga_upl_baseline/results/vga_comparison_experiment_with_drl/comprehensive_results.json
-
-# ==================
-# Keep these important files (override above rules)
-# ==================
-# Models - KEEP ALL (essential for reproduction)
-!drl_vga_experiments/models/*.zip
-!drl_vga_experiments/models/*.pkl
-!drl_vga_experiments/models/training_summary.json
-
-# Results - KEEP JSON results
-!**/comparison_results.json
-!**/evaluation_results.json
-!**/*_summary.json
+_archive/
+vga_baseline/archive/
+vga_baseline/archive.rar
+docs
