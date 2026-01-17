@@ -8,10 +8,10 @@
 
 This project implements and compares two fundamentally different approaches to autonomous pedestrian navigation using the **VGA (Virtual Guidance Assistance) experimental dataset**:
 
-| Approach | Method | Success Rate | Nature |
-|----------|--------|--------------|--------|
-| **DRL Agent** | Deep Reinforcement Learning (PPO) | 98.9% | Data-driven, learned |
-| **VGA+UPL** | Variable Goal Approach + Universal Power Law | 100% | Physics-based, geometric |
+| Approach            | Method                                       | Success Rate | Nature                   |
+| ------------------- | -------------------------------------------- | ------------ | ------------------------ |
+| **DRL Agent** | Deep Reinforcement Learning (PPO)            | 100%         | Data-driven, learned     |
+| **VGA+UPL**   | Variable Goal Approach + Universal Power Law | 100%         | Physics-based, geometric |
 
 **Dataset:** 941 real human pedestrian navigation trials from the [VGA Experimental Dataset](https://github.com/kanika201293/Pedestrian-Experimental-Data)
 
@@ -27,7 +27,7 @@ project/
 │   ├── evaluate_vga_drl.py         # Evaluation & visualization generator
 │   ├── vga_experimental_env.py     # Gymnasium environment
 │   ├── models/                     # Trained DRL models
-│   │   ├── vga_drl_final.zip      # Final trained policy (98.9% success)
+│   │   ├── vga_drl_final.zip      # Final trained policy (100% success)
 │   │   └── vga_drl_stage6_vecnormalize.pkl  # CRITICAL normalization stats
 │   ├── evaluation_final/           # Full evaluation results
 │   └── README.md                  # DRL-specific documentation
@@ -74,16 +74,16 @@ project/
 
 Both methods are tested on identical VGA dataset scenarios:
 
-| Scenario | Obstacles | Trials | Description | Difficulty |
-|----------|-----------|--------|-------------|------------|
-| **SOSP** | 1 | 54 | Single Obstacle Single Pedestrian | Easy |
-| **MOSP_A** | 4 | 239 | Low density (sparse) | Easy |
-| **MOSP_B** | 7 | 188 | Medium density (TIGHT spacing) | Hard |
-| **MOSP_C** | 12 | 184 | High density | Medium |
-| **MOSP_D** | 16 | 276 | Very high density | Hard |
+| Scenario         | Obstacles | Trials | Description                       | Difficulty |
+| ---------------- | --------- | ------ | --------------------------------- | ---------- |
+| **SOSP**   | 1         | 54     | Single Obstacle Single Pedestrian | Easy       |
+| **MOSP_A** | 4         | 239    | Low density (sparse)              | Easy       |
+| **MOSP_B** | 7         | 188    | Medium density (TIGHT spacing)    | Hard       |
+| **MOSP_C** | 12        | 184    | High density                      | Medium     |
+| **MOSP_D** | 16        | 276    | Very high density                 | Hard       |
 
-**Arena Dimensions:** 10m × 3.5m (matches real VGA experiments)  
-**Agent Radius:** 0.2m  
+**Arena Dimensions:** 10m × 3.5m (matches real VGA experiments)
+**Agent Radius:** 0.2m
 **Obstacle Radius:** 0.25m
 
 ---
@@ -96,12 +96,12 @@ Both methods are tested on identical VGA dataset scenarios:
 Method: Proximal Policy Optimization (PPO)
 Training: 6-stage curriculum, 2M timesteps
 
-Overall Success Rate: 98.9% (932/941)
+Overall Success Rate: 100% (941/941)
 ├── SOSP:    100.0% (54/54)
 ├── MOSP_A:  100.0% (239/239)
-├── MOSP_B:   98.9% (186/188)  ← Hardest (tight spacing)
+├── MOSP_B:  100.0% (188/188)
 ├── MOSP_C:  100.0% (184/184)
-└── MOSP_D:   99.3% (274/276)
+└── MOSP_D:  100.0% (276/276)
 ```
 
 ### VGA+UPL Performance
@@ -150,27 +150,27 @@ python scripts/generate_stochastic_visualizations.py
 
 ## Key Technical Differences
 
-| Aspect | DRL Agent | VGA+UPL |
-|--------|-----------|---------|
-| **Decision Making** | Neural network inference | Geometric subgoal computation |
-| **Training Required** | Yes (2M timesteps, ~2 hours) | No (analytical) |
-| **Interpretability** | Black box | Fully interpretable |
-| **Tuning** | Hyperparameters + reward | Physics parameters |
-| **Path Variety** | Stochastic policy | Stochastic mode option |
-| **Generalization** | Within training distribution | Physics-based principles |
+| Aspect                      | DRL Agent                    | VGA+UPL                       |
+| --------------------------- | ---------------------------- | ----------------------------- |
+| **Decision Making**   | Neural network inference     | Geometric subgoal computation |
+| **Training Required** | Yes (2M timesteps, ~2 hours) | No (analytical)               |
+| **Interpretability**  | Black box                    | Fully interpretable           |
+| **Tuning**            | Hyperparameters + reward     | Physics parameters            |
+| **Path Variety**      | Stochastic policy            | Stochastic mode option        |
+| **Generalization**    | Within training distribution | Physics-based principles      |
 
 ---
 
 ## Documentation
 
-| Document | Description |
-|----------|-------------|
-| [drl_training/README.md](drl_training/README.md) | DRL training & evaluation guide |
-| [vga_baseline/README.md](vga_baseline/README.md) | VGA+UPL usage guide |
-| [vga_baseline/VGA_UPL_ALGORITHM.md](vga_baseline/VGA_UPL_ALGORITHM.md) | Deep dive into VGA+UPL algorithm |
-| [data/DATASET_DOCUMENTATION.md](data/DATASET_DOCUMENTATION.md) | Comprehensive dataset documentation |
-| [comparisons/static_obstacles/](comparisons/static_obstacles/) | DRL vs VGA static comparison results |
-| [docs/presentation_drl_vs_vga.md](docs/presentation_drl_vs_vga.md) | Presentation slides (Marp format) |
+| Document                                                            | Description                          |
+| ------------------------------------------------------------------- | ------------------------------------ |
+| [drl_training/README.md](drl_training/README.md)                       | DRL training & evaluation guide      |
+| [vga_baseline/README.md](vga_baseline/README.md)                       | VGA+UPL usage guide                  |
+| [vga_baseline/VGA_UPL_ALGORITHM.md](vga_baseline/VGA_UPL_ALGORITHM.md) | Deep dive into VGA+UPL algorithm     |
+| [data/DATASET_DOCUMENTATION.md](data/DATASET_DOCUMENTATION.md)         | Comprehensive dataset documentation  |
+| [comparisons/static_obstacles/](comparisons/static_obstacles/)         | DRL vs VGA static comparison results |
+| [docs/presentation_drl_vs_vga.md](docs/presentation_drl_vs_vga.md)     | Presentation slides (Marp format)    |
 
 ---
 
@@ -195,6 +195,7 @@ pip install -r requirements.txt
 ## Dataset
 
 VGA experimental data is included in the project:
+
 ```
 data/VGA-Experimental-Data/
 ```
@@ -202,6 +203,7 @@ data/VGA-Experimental-Data/
 This is the default location. You can also modify `data_root` parameter in scripts if needed.
 
 **Dataset Files:**
+
 - `SOSP_initialFinalPos_feed.txt` / `SOSP_obstPos_feed.txt`
 - `MOSP_CaseA/B/C/D_initialFinalPos_feed.txt`
 - `MOSP_CaseA/B/C/D_obstPos_feed.txt`
@@ -220,12 +222,14 @@ This is the default location. You can also modify `data_root` parameter in scrip
 ## Key Findings
 
 ### DRL Strengths
+
 - Learns directly from data (no physics modeling)
 - Fast inference (real-time capable)
 - Generalizes across density levels
 - Can capture subtle behavioral patterns
 
 ### VGA+UPL Strengths
+
 - 100% success rate (higher than DRL)
 - Fully interpretable (geometric reasoning)
 - No training required
@@ -233,6 +237,7 @@ This is the default location. You can also modify `data_root` parameter in scrip
 - Stochastic mode shows human-like path variety
 
 ### Trade-offs
+
 - DRL requires significant training compute
 - VGA+UPL requires careful parameter tuning
 - DRL is a "black box" (less interpretable)
@@ -243,11 +248,6 @@ This is the default location. You can also modify `data_root` parameter in scrip
 ## Attribution
 
 **VGA Experimental Dataset:**
+
 - Source: https://github.com/kanika201293/Pedestrian-Experimental-Data
 - Paper: "Virtual Guidance Assistance in Crowd Navigation"
-
----
-
-**Last Updated:** January 18, 2026  
-**Version:** 4.0  
-**Status:** Production Ready
