@@ -1,0 +1,26 @@
+{
+  "timestamp": "2026-01-21T18:51:07.220420",
+  "num_drl_runs": 5,
+  "results": [
+    {
+      "scenario": "MOSP_C",
+      "trial": 11,
+      "vga_steps": [
+        136,
+        136,
+        136,
+        136,
+        136
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        157,
+        156,
+        150,
+        152,
+        163
+      ],
+      "drl_diversity_m": 0.621
+    }
+  ]
+}

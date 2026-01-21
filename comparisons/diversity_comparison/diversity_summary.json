@@ -1,0 +1,306 @@
+{
+  "timestamp": "2026-01-21T18:25:17.131287",
+  "num_drl_runs": 5,
+  "results": [
+    {
+      "scenario": "SOSP",
+      "trial": 6,
+      "vga_steps": [
+        116,
+        116,
+        116,
+        116,
+        116
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        119,
+        129,
+        120,
+        118,
+        123
+      ],
+      "drl_diversity_m": 0.237
+    },
+    {
+      "scenario": "SOSP",
+      "trial": 16,
+      "vga_steps": [
+        124,
+        124,
+        124,
+        124,
+        124
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        125,
+        126,
+        124,
+        127,
+        123
+      ],
+      "drl_diversity_m": 0.221
+    },
+    {
+      "scenario": "SOSP",
+      "trial": 31,
+      "vga_steps": [
+        124,
+        124,
+        124,
+        124,
+        124
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        122,
+        126,
+        127,
+        121,
+        121
+      ],
+      "drl_diversity_m": 0.2381
+    },
+    {
+      "scenario": "MOSP_A",
+      "trial": 11,
+      "vga_steps": [
+        127,
+        127,
+        127,
+        127,
+        127
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        123,
+        125,
+        124,
+        131,
+        128
+      ],
+      "drl_diversity_m": 0.1967
+    },
+    {
+      "scenario": "MOSP_A",
+      "trial": 51,
+      "vga_steps": [
+        124,
+        124,
+        124,
+        124,
+        124
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        122,
+        124,
+        124,
+        128,
+        124
+      ],
+      "drl_diversity_m": 0.1527
+    },
+    {
+      "scenario": "MOSP_A",
+      "trial": 101,
+      "vga_steps": [
+        131,
+        131,
+        131,
+        131,
+        131
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        141,
+        158,
+        146,
+        142,
+        130
+      ],
+      "drl_diversity_m": 0.3007
+    },
+    {
+      "scenario": "MOSP_B",
+      "trial": 16,
+      "vga_steps": [
+        129,
+        129,
+        129,
+        129,
+        129
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        131,
+        147,
+        133,
+        140,
+        135
+      ],
+      "drl_diversity_m": 0.3095
+    },
+    {
+      "scenario": "MOSP_B",
+      "trial": 61,
+      "vga_steps": [
+        129,
+        129,
+        129,
+        129,
+        129
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        129,
+        126,
+        129,
+        126,
+        131
+      ],
+      "drl_diversity_m": 0.1747
+    },
+    {
+      "scenario": "MOSP_B",
+      "trial": 121,
+      "vga_steps": [
+        123,
+        123,
+        123,
+        123,
+        123
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        126,
+        122,
+        126,
+        121,
+        121
+      ],
+      "drl_diversity_m": 0.2014
+    },
+    {
+      "scenario": "MOSP_C",
+      "trial": 11,
+      "vga_steps": [
+        136,
+        136,
+        136,
+        136,
+        136
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        176,
+        139,
+        157,
+        138,
+        201
+      ],
+      "drl_diversity_m": 1.1963
+    },
+    {
+      "scenario": "MOSP_C",
+      "trial": 51,
+      "vga_steps": [
+        136,
+        136,
+        136,
+        136,
+        136
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        153,
+        147,
+        143,
+        159,
+        159
+      ],
+      "drl_diversity_m": 0.3479
+    },
+    {
+      "scenario": "MOSP_C",
+      "trial": 91,
+      "vga_steps": [
+        125,
+        125,
+        125,
+        125,
+        125
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        130,
+        140,
+        251,
+        132,
+        129
+      ],
+      "drl_diversity_m": 0.4918
+    },
+    {
+      "scenario": "MOSP_D",
+      "trial": 21,
+      "vga_steps": [
+        125,
+        125,
+        125,
+        125,
+        125
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        135,
+        135,
+        135,
+        138,
+        179
+      ],
+      "drl_diversity_m": 1.0225
+    },
+    {
+      "scenario": "MOSP_D",
+      "trial": 81,
+      "vga_steps": [
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        128,
+        134,
+        130,
+        131,
+        129
+      ],
+      "drl_diversity_m": 0.1763
+    },
+    {
+      "scenario": "MOSP_D",
+      "trial": 151,
+      "vga_steps": [
+        135,
+        135,
+        135,
+        135,
+        135
+      ],
+      "vga_diversity_m": 0.0,
+      "drl_steps": [
+        143,
+        147,
+        144,
+        141,
+        141
+      ],
+      "drl_diversity_m": 0.2242
+    }
+  ]
+}
