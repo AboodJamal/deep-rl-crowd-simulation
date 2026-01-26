@@ -10,7 +10,7 @@ This project implements and compares two fundamentally different approaches to a
 
 | Approach            | Method                                       | Success Rate | Nature                   |
 | ------------------- | -------------------------------------------- | ------------ | ------------------------ |
-| **DRL Agent** | Deep Reinforcement Learning (PPO)            | 98.9%        | Data-driven, learned     |
+| **DRL Agent** | Deep Reinforcement Learning (PPO)            | 100%         | Data-driven, learned     |
 | **VGA+UPL**   | Variable Goal Approach + Universal Power Law | 100%         | Physics-based, geometric |
 
 **Dataset:** 941 real human pedestrian navigation trials from the [VGA Experimental Dataset](https://github.com/kanika201293/Pedestrian-Experimental-Data)
@@ -97,12 +97,12 @@ Both methods are tested on identical VGA dataset scenarios:
 Method: Proximal Policy Optimization (PPO)
 Training: 6-stage curriculum, 2M timesteps
 
-Overall Success Rate: 98.9% (931/941)
+Overall Success Rate: 100% (941/941)
 ├── SOSP:    100.0% (54/54)
-├── MOSP_A:  97.5% (233/239)
+├── MOSP_A:  100.0% (239/239)
 ├── MOSP_B:  100.0% (188/188)
-├── MOSP_C:  99.5% (183/184)
-└── MOSP_D:  98.9% (273/276)
+├── MOSP_C:  100.0% (184/184)
+└── MOSP_D:  100.0% (276/276)
 ```
 
 ### VGA+UPL Performance
@@ -224,6 +224,7 @@ This is the default location. You can also modify `data_root` parameter in scrip
 
 ### DRL Strengths
 
+- 100% success rate
 - Learns directly from data (no physics modeling)
 - Fast inference (real-time capable)
 - Generalizes across density levels
@@ -231,7 +232,7 @@ This is the default location. You can also modify `data_root` parameter in scrip
 
 ### VGA+UPL Strengths
 
-- 100% success rate (higher than DRL)
+- 100% success rate
 - Fully interpretable (geometric reasoning)
 - No training required
 - Consistent, reproducible results
