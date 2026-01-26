@@ -10,7 +10,7 @@ This project implements and compares two fundamentally different approaches to a
 
 | Approach            | Method                                       | Success Rate | Nature                   |
 | ------------------- | -------------------------------------------- | ------------ | ------------------------ |
-| **DRL Agent** | Deep Reinforcement Learning (PPO)            | 100%         | Data-driven, learned     |
+| **DRL Agent** | Deep Reinforcement Learning (PPO)            | 98.9%        | Data-driven, learned     |
 | **VGA+UPL**   | Variable Goal Approach + Universal Power Law | 100%         | Physics-based, geometric |
 
 **Dataset:** 941 real human pedestrian navigation trials from the [VGA Experimental Dataset](https://github.com/kanika201293/Pedestrian-Experimental-Data)
@@ -36,6 +36,7 @@ project/
 │   ├── models/
 │   │   ├── vga_upl_planner_v4.py  # VGA algorithm (100% success)
 │   │   └── upl_physics.py         # Universal Power Law physics
+│   ├── 2501.05100v2.pdf           # VGA+UPL Paper (arXiv:2501.05100)
 │   ├── scripts/
 │   │   ├── generate_v4_visualizations.py      # Deterministic visualizations
 │   │   └── generate_stochastic_visualizations.py  # Stochastic visualizations
@@ -96,12 +97,12 @@ Both methods are tested on identical VGA dataset scenarios:
 Method: Proximal Policy Optimization (PPO)
 Training: 6-stage curriculum, 2M timesteps
 
-Overall Success Rate: 100% (941/941)
+Overall Success Rate: 98.9% (931/941)
 ├── SOSP:    100.0% (54/54)
-├── MOSP_A:  100.0% (239/239)
+├── MOSP_A:  97.5% (233/239)
 ├── MOSP_B:  100.0% (188/188)
-├── MOSP_C:  100.0% (184/184)
-└── MOSP_D:  100.0% (276/276)
+├── MOSP_C:  99.5% (183/184)
+└── MOSP_D:  98.9% (273/276)
 ```
 
 ### VGA+UPL Performance

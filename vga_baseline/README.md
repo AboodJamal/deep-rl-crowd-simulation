@@ -2,6 +2,8 @@
 
 **Variable Goal Approach (VGA) + Universal Power Law (UPL) for Pedestrian Navigation**
 
+**Reference:** arXiv:2501.05100v2 [cs.RO] - "Variable Goal Approach with Universal Power Law for Human-Like Pedestrian Navigation"
+
 ---
 
 ## 🎯 Overview
@@ -54,6 +56,7 @@ vga_upl_baseline/
 │
 ├── archive/                        # Deprecated files (reference only)
 │
+├── 2501.05100v2.pdf                # 📄 Original VGA+UPL paper
 ├── VGA_UPL_ALGORITHM.md           # 📖 DEEP algorithm documentation
 ├── COMMANDS.txt                   # 📋 All commands to run
 ├── README.md                      # This file

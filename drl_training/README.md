@@ -24,9 +24,10 @@
 This project trains a **Deep Reinforcement Learning (DRL)** agent using **Proximal Policy Optimization (PPO)** on the **VGA experimental dataset** containing real pedestrian navigation trials.
 
 **Key Achievement:**
-- ✅ **98.9% success rate** on VGA test scenarios
+- ✅ **98.9% success rate** on VGA test scenarios (931/941 trials)
 - ✅ Trained on 941 real human navigation trials
 - ✅ Learned to navigate through 1-16 obstacles in constrained spaces
+- ✅ Strong performance on unseen test data
 
 **Source Dataset:** [Pedestrian Experimental Data](https://github.com/kanika201293/Pedestrian-Experimental-Data)
 
@@ -54,6 +55,8 @@ This project trains a **Deep Reinforcement Learning (DRL)** agent using **Proxim
 - **Test:** 15% of trials per scenario (141 trials)
 
 **Data Location (included in project):** `data/VGA-Experimental-Data/`
+
+**Baseline Comparison:** VGA+UPL algorithm (arXiv:2501.05100)
 
 ---
 

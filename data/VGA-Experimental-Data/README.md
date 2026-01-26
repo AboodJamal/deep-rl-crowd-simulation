@@ -1,7 +1,26 @@
-# Pedestrian-Experimental-Data
-There are multiple experiments, SOSP, Head-On, Parallel-Ped, MOSP (Case A, B, C, and D) and the experimental data is provided in the following files.
+# VGA Experimental Dataset
 
-SOSP:  
+**Pedestrian Navigation Experiments - Real Human Data**
+
+---
+
+## Overview
+
+This dataset contains real human pedestrian navigation experiments conducted in controlled environments. The data includes start/goal positions, obstacle configurations, desired speeds, and experiment identifiers across multiple scenarios.
+
+**Source:** [Pedestrian-Experimental-Data](https://github.com/kanika201293/Pedestrian-Experimental-Data)
+
+**Total Experiments:** 941 trials across 7 scenarios
+
+---
+
+## Experimental Scenarios
+
+There are multiple experiments: SOSP, Head-On, Parallel-Ped, MOSP (Case A, B, C, and D). The experimental data is provided in the following files:
+
+---
+
+### SOSP (Single Obstacle Single Pedestrian)  
 `1.`'SOSP_initialFinalPos_feed.txt' (6 columns) - pedInitialPos_x, pedInitialPos_y, pedFinalPos_x, pedFinalPos_y, pedDesiredSpeed, ExpNo.  
 `2.`'SOSP_obstPos_feed.txt' (3 columns) - obstPos_x, obstPos_y, obstNo.  
 `3.` SOSP_maxTime = 6.833 s
