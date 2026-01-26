@@ -247,9 +247,93 @@ This is the default location. You can also modify `data_root` parameter in scrip
 
 ---
 
-## Attribution
+## Multi-Agent Experiments
 
-**VGA Experimental Dataset:**
+A dedicated branch [`drl-multiagents`](https://github.com/AboodJamal/deep-rl-crowd-simulation/tree/drl-multiagents) extends this project to multi-agent DRL navigation. See that branch for code, results, and a Quick Start guide.
 
-- Source: https://github.com/kanika201293/Pedestrian-Experimental-Data
-- Paper: "Virtual Guidance Assistance in Crowd Navigation"
+**References for metrics and evaluation can be found at the end of `docs/PRESENTATION_GUIDE.md`.**
+
+---
+
+## Metrics Used
+All results are averaged over 30 trials per scenario, for a total of 150 trials.
+
+| **Metric**                        | **Definition**                                                                                                                     |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Success Rate (↑)**               | Fraction of trials where the agent reaches the goal without collision. Higher is better.                                           |
+| **SPL (↑)**                        | Success weighted by path length: combines success and path efficiency. Higher is better.                                          |
+| **Travel Time (s) (↓)**            | Time taken to reach the goal. Lower is better.                                                                                     |
+| **Collision Rate (↓)**             | Fraction of trials with any collision. Lower is better.                                                                            |
+| **Average Jerk (m/s³) (↓)**        | Smoothness of motion: lower jerk means smoother, more natural movement. Lower is better.                                          |
+| **Minimum Clearance (m) (↑)**      | Closest distance to any obstacle during navigation. Higher is safer.                                                              |
+| **Oscillation Index (↓)**          | Measures unnecessary zigzagging or back-and-forth motion. Lower is better.                                                        |
+
+---
+
+| **Metric**                        | **VGA + UPL** | **DRL (PPO)** |
+| ---------------------------------- | ------------ | ------------- |
+| **Success Rate (↑)**               | **100.0%**   | **100.0%**    |
+| **SPL (↑)**                        | **1.00**     | 0.949         |
+| **Travel Time (s) (↓)**            | 6.46         | **6.36**      |
+| **Collision Rate (↓)**             | 2.0%         | **0.0%**      |
+| **Average Jerk (m/s³) (↓)**        | **21.20**    | 96.17         |
+| **Minimum Clearance (m) (↑)**      | **0.277**    | **0.277**     |
+| **Oscillation Index (↓)**          | **4.01**     | 20.58         |
+
+_Bolded values indicate the best (most desirable) result for each metric._
+
+---
+
+| **Metric**                               | **Definition**                                                                                                                     |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Generalization / Adaptability**        | Ability of the agent to handle unseen environments, layouts, or configurations beyond those encountered during training.           |
+| **Dynamic Obstacle Handling**            | Capability to react safely and effectively to moving obstacles and changing environments in real time.                             |
+| **Multi-Agent Scalability**              | Ability to coordinate, avoid deadlocks, and operate robustly when multiple agents interact in shared space.                        |
+| **Natural Motion**                       | Degree to which the generated trajectories resemble smooth, continuous, human-like movement rather than sharp or artificial paths. |
+| **Trajectory Diversity & Stochasticity** | Ability to produce varied paths under identical conditions, reflecting natural variability in human decision-making.               |
+| **Legibility**                           | How clearly the trajectory communicates the agent’s intent (goal and direction) to observers or other agents.                      |
+| **Hesitation Behavior**                  | How decisively the agent commits to a path near obstacles, avoiding unnecessary stops or oscillations.                             |
+| **Comfort / Personal Space**             | Extent to which the agent respects comfortable distances from obstacles and others, aligning with human comfort zones.             |
+
+---
+
+| #     | Dimension                                | VGA + UPL                 | DRL (PPO)    | Winner  | Reason                                                                                                                     |
+| ----- | ---------------------------------------- | ------------------------- | ------------ | ------- | -------------------------------------------------------------------------------------------------------------------------- |
+| **1** | **Generalization / Adaptability**        | ⚠️ Limited                | ✅ Excellent  | **DRL** | VGA has no learning and struggles in narrow corridors or trapped spaces. DRL learns and adapts, similar to human behavior. |
+| **2** | **Dynamic Obstacle Handling**            | ❌ Poor                    | ✅ Excellent  | **DRL** | VGA assumes a static world and fails with moving obstacles. DRL adapts in real time.                                       |
+| **3** | **Multi-Agent Scalability**              | ❌ Failed                  | ✅ Good       | **DRL** | VGA deadlocks with other agents. DRL exhibits coordination and partial cooperation.                                        |
+| **4** | **Natural Motion**                       | ✅ OK (Not very realistic) | ✅ Human-like | **DRL** | VGA produces sharp waypoint turns. DRL generates smooth, continuous trajectories.                                          |
+| **5** | **Trajectory Diversity & Stochasticity** | ❌ None                    | ✅ High       | **DRL** | VGA is deterministic (same path every run). DRL is stochastic, producing varied, human-like paths.                         |
+| **6** | **Legibility**                           | ✅ Good                    | ✅ Good       | **TIE** | Both methods produce trajectories that clearly communicate intent.                                                         |
+| **7** | **Hesitation Behavior**                  | ✅ Good                    | ✅ Decisive   | **TIE** | VGA behaves cautiously near obstacles. DRL commits confidently to a path.                                                  |
+| **8** | **Comfort / Personal Space**             | ✅ Good                    | ✅ Good       | **TIE** | Both respect obstacle clearances; DRL often maintains slightly smoother margins.                                           |
+
+---
+
+## Summary & Discussion
+
+This work investigated whether Deep Reinforcement Learning (DRL) can produce more realistic pedestrian navigation compared to a classical model-based approach (VGA + UPL).
+
+**VGA+UPL excels in:**
+- Path efficiency (SPL)
+- Smooth motion (low jerk, low oscillation)
+- Predictable, rule-consistent behaviour
+
+**DRL (PPO) excels in:**
+- Adaptability & generalization
+- Dynamic obstacle handling
+- Multi-agent coordination
+- Natural variability and human-like motion
+
+Quantitative metrics alone are insufficient to capture navigation realism.
+Qualitative evaluation reveals critical differences in natural motion, adaptability, stochasticity, and coordination.
+As a secondary goal, this work extended the DRL framework to multi-agent systems.
+
+**Limitations:**
+- VGA+UPL required full reimplementation due to missing code and the lack of trajectories data was challenging to find strong metrics.
+- DRL training, especially in multi-agent settings, is computationally expensive and sensitive to reward design
+
+**Future work:**
+- Learn reward functions directly from human trajectory data
+- Explore hybrid models that combine DRL adaptability with VGA interpretability
+- Improve perception models and enhance scalable multi-agent coordination
